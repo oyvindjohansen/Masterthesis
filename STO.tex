@@ -1,0 +1,206 @@
+\chapter{Spin torque oscillators}
+\section{Giant magnetoresistance}
+An important effect that is fundamental for the spin torque oscillators is the giant magnetoresistance (GMR) effect. This effect was discovered by Albert Fert \cite{Fert1988} and Peter Gr\"{u}nberg \cite{Grunberg1989} in 1988, for which they won the Nobel prize in 2007. They discovered that when an electrical current passed through a layered magnetic system with different magnetic orientations, the resistance changed considerably depending on whether the magnetic layers were parallel or anti-parallel, as illustrated in Figure \ref{fig:GMR}. The reason for this difference in resistance is that electrons with magnetic moments aligned with the local magnetization are scattered far less than electrons that have a component in their magnetic moments that is perpendicular to the local magnetization \cite{Chappert2007}. This can be argued through the fact that in the ferromagnetic coupling between the itinerant and local electrons, the electrons that are not aligned with the local magnetization have a higher exchange energy than electrons that are aligned. They then have to pass through a higher energy barrier than the aligned electrons, and the current of those electrons will therefore have a higher resistance.
+\begin{figure}[h!]
+\centering
+  \begin{subfigure}[b]{.58\textwidth}
+  \includegraphics[width=\linewidth]{Figures/GMR_AP.pdf}
+  \caption{}
+  \label{fig:GMR_AP}
+\end{subfigure}
+\begin{subfigure}[b]{.6\textwidth}
+  \includegraphics[width=\linewidth]{Figures/GMR_P.pdf}
+  \caption{}
+  \label{fig:GMR_P}
+\end{subfigure}
+\caption{The resistance of a current passing through a multilayered magnetic system depends on the magnetic moment of the electron (proportional to their spin) and the alignment of the magnetic layers. Here we consider an anti-parallel configuration in \textbf{(a)} and a parallel configuration in \textbf{(b)} separated by a non-magnetic material. In \textbf{(a)} the resistance is high because of the anti-parallel configuration of the magnetic layers the current has to pass through. In \textbf{(b)} the resistance of the electrons with a magnetic moment parallel to the magnetic layers is lower than the electrons with an anti-parallel magnetic moment.}
+\label{fig:GMR}
+\end{figure}
+
+GMR has most noticeably been utilized in nonvolatile memory technologies such as magnetoresistive random-access memory (MRAM) \cite{Akerman2005} and racetrack memories \cite{Parkin2008}. The GMR is pivotal in spin torque oscillators, as the resistance is a function of the angle between two magnetizations. If we were able to make these magnetizations oscillate, such that the angle between them varies in time, the oscillation in the resistance due to GMR will cause an oscillation in the current. We would then have an oscillator that converts the direct current applied to the system into an alternating current. This type of system that utilizes the precession of magnetic moments to generate an oscillating current is known as a spin torque oscillator (STO).
+
+\section{Spin torque oscillators under influence of spin--orbit coupling}
+The spin torque oscillators that we will consider in this thesis primarily consist of a fixed polarizing magnetic layer, and two free magnetic layers that interact with each other through the RKKY interaction. We will study the effects the Rashba spin--orbit coupling may have in two different geometries, a bulk geometry and a thin film geometry, as illustrated in Figure \ref{fig:Geometries}. Whether the system is in an oscillating state depends on the system parameters, such as the strength of the magnetic anisotropy (which we assume to be uniaxial), the current density inducing spin-transfer torques, and the strength of the RKKY interaction between the free magnetic layers. Spin torque oscillators have been found to occur in both ferromagnetic \cite{Zhou2013} and antiferromagnetic \cite{Klein2012} coupling between the free magnetic layers. By varying some of these parameters we can study when the system is in an STO phase, or when a collinear state where the free magnetic layers are aligned or anti-aligned with the easy axis of the material is stable. This would result in a phase diagram that would give information regarding what state we will find the system in for a given set of parameters. The goal of this chapter is to study the effects of Rashba spin--orbit coupling on the STO phase in this phase diagram, and the effects it has on the oscillation frequency of the current going out of the system. 
+\begin{figure}[h!]
+\centering
+%\begin{center}
+\begin{subfigure}{.6\textwidth}
+  \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/STO_Bulkv2}};
+\node at (10pt,70pt) {\Large{$z$}};
+\node at (32pt,47pt) {\Large{$y$}};
+\node at (42pt,8pt) {\Large{$x$}};
+\node at (115pt,40pt) {\Large{F$_0$}};
+\node at (192pt,40pt) {\Large{F$_1$}};
+\node at (215pt,40pt) {\Large{F$_2$}};
+\node at (70pt,110pt) {\textcolor{blue}{\Large{$\mathbold{j}_x$}}};
+\node at (255pt,130pt) {\textcolor{blue}{\Large{$\mathbold{j}_y$}}};
+\end{tikzpicture}
+\caption{}
+\label{fig:BulkGeometry} 
+\end{subfigure}
+
+\begin{subfigure}{.6\textwidth}
+  \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/STO_Filmv2}};
+\node at (8pt,50pt) {\Large{$z$}};
+\node at (28pt,32pt) {\Large{$y$}};
+\node at (37pt,-2pt) {\Large{$x$}};
+\node at (90pt,25pt) {\Large{F$_0$}};
+\node at (177pt,25pt) {\Large{F$_1$}};
+\node at (212pt,25pt) {\Large{F$_2$}};
+\node at (160pt,54pt) {\textcolor{blue}{\large{$\mathbold{j}_x$}}};
+\end{tikzpicture}
+\caption{}
+\label{fig:FGeometry} 
+\end{subfigure}
+%\end{center}
+\caption{Illustrations of \textbf{(a)} the bulk geometry and \textbf{(b)} the thin film geometry. In geometries a fixed magnetic layer F$_0$ is separated from two free magnetic layers F$_1$ and F$_2$ by a non-magnetic metallic material shown here in blue. A material illustrated in black, which is neighboring to F$_1$ and F$_2$ in \textbf{(a)} and the top film in \textbf{(b)}, is present to get a strong Rashba spin--orbit coupling at the interface of the free ferromagnetic layers. In \textbf{(b)} the bottom film is a material that will cause little to no RSOC at the interface to the ferromagnetic materials. To induce dynamics a current is applied in the $x$-direction which causes $\mathbold{m}_1$ and $\mathbold{m}_2$ to experience spin-transfer torques. In \textbf{(a)} a current is also applied in the $y$-direction to create significant RSOC effects on $\mathbold{m}_1$ and $\mathbold{m}_2$ due to the symmetry breaking in the $x$-direction. In the film geometry this is caused by the current in the $x$-direction as the symmetry breaking is in the $z$-direction. The free magnetic layers also interact through the RKKY interaction, while the distance to the fixed magnetic layer is chosen such that an RKKY interaction with this layer can be neglected. In \textbf{(a)} the material has an easy axis in the $z$-direction, while in \textbf{(b)} the material has an easy axis in the $y$-direction.}
+\label{fig:Geometries}
+\end{figure}
+
+The model that we will use to analyze this system is a variation of the Landau--Lifshitz--Gilbert--Slonczewski (LLGS) equation that includes the Rashba field derived by Kim et al. \cite{Kim2012}. The LLGS equation is an expansion of the LLG equation \eqref{eq:LLG} that includes spin-transfer torques on uniform magnetic moments. Usually the non-adiabatic spin-transfer torque is rather small compared to the adiabatic spin-transfer torque, to an order of magnitude on the size of the Gilbert damping $\alpha$ (which is typically $~10^{-2}$ for the systems we will consider). This torque still has a significant contribution to the dynamics of the magnetization even at this order of magnitude, as we have previously seen in the skyrmion dynamics. In metallic multilayers such as N/F/N/F/N (N being a non-magnetic metal, and F being a ferromagnetic metal), however, the non-adiabatic STT is even smaller than usual due to symmetry considerations. The lowest contribution to the non-adiabatic STT in such a system becomes quadratic in the applied voltage bias $V$ that generates the current responsible for STT. Since the voltage bias necessary to generate large current densities for systems at this scale is quite small, a torque that is proportional to $V^2$ can be neglected. This symmetry consideration is discussed in more detail by Ralph and Stiles \cite{Ralph2008}. We are then content by only including the adiabatic spin-transfer torque in our model, and the LLGS equation that we consider then becomes
+\begin{align}
+    \label{eq:LLGS}
+    \partial_t \mathbold{m}_i = -\gamma \mathbold{m}_i\times\left(\mathbold{H}^{\text{eff}}_i+\mathbold{H}^{\text{R}}_i - \beta\mathbold{m}_i\times\mathbold{H}^{\text{R}}_i\right) + \alpha\mathbold{m}_i \times\partial_t\mathbold{m}_i + \mathbold{T}^{\text{STT}}_i,
+\end{align}
+with $\mathbold{m}_i$ being the magnetization in F$_i$. We remember that the Rashba field is given by
+\begin{align}
+    \mathbold{H}^{\text{R}}_i = \frac{1}{1+\beta^2}\frac{\alpha_{\text{R}}m_e P(i) j}{e M_s \hbar \mu_0} \mathbold{\hat{n}}\times\mathbold{\hat{j}}.
+\end{align}
+The polarization $P(i)$ is the polarization of the current responsible for the spin--orbit coupling at the interface between F$_i$ and the material that induces a strong RSOC at the interface. Note that the non-adiabatic contribution of the Rashba field proportional to $\beta$ is still included, as the same symmetry argument that allowed us to neglect the non-adiabatic STT is not applicable to this torque. The adiabatic STT acting on $\mathbold{m}_1$ and $\mathbold{m}_2$ are given by
+\begin{subequations}
+\begin{align}
+    \mathbold{T}^{\text{STT}}_1 &= -\frac{\gamma \hbar j_x}{2 e M_s \mu_0 d} \mathbold{m}_1\times\left( P_0\mathbold{m}_0 - P_1 \mathbold{m}_2\right) \times \mathbold{m}_1, \\
+    \mathbold{T}^{\text{STT}}_2 &= -\frac{\gamma \hbar j_x}{2 e M_s \mu_0 d} P_1 \mathbold{m}_2\times \mathbold{m}_1 \times \mathbold{m}_2,
+\end{align}
+\end{subequations}
+following the derivation in Section \ref{sec:AdSTT}. Here $P_i$ is the polarization of the current after having passed through F$_i$. The effective field $\mathbold{H}^{\text{eff}}_i$ in the free magnetic layer F$_i$ is given by the field resulting from magnetic anisotropy and the RKKY interaction, which becomes
+\begin{align}
+    \mathbold{H}^{\text{eff}}_i = \frac{2K}{\mu_0 M_s}\left( \mathbold{m}_i \cdot \mathbold{\hat{n}}_k\right)\mathbold{\hat{n}}_k + \frac{J_{\text{RKKY}}}{\mu_0 M_s d} \mathbold{m}_{\bar{i}}.
+\end{align}
+Here $\mathbold{\hat{n}}_k$ is a unit vector along the easy axis, $d$ is the thickness of the free magnetic layers F$_1$ and F$_2$ (which are assumed to have an equal thickness), and $\bar{i}$ indicates the index of the free magnetic layer that is not $i$ ($\bar{i} = 3 - i$). To study the different stable phases of this system, which we assume to be collinear states along $\mathbold{\hat{n}}_k$, we follow the derivation by Zhou et al. \cite{Zhou2013}. We first make the ansatz that we have a small perturbation $\mathbold{u}_i$ from a collinear state, so that $\mathbold{m}_i \approx \lambda_i\mathbold{\hat{n}}_k + \mathbold{u}_i$, where $\lambda_i = \pm 1$. The possible collinear states in question are $\downarrow\downarrow, \downarrow\uparrow, \uparrow\downarrow, \uparrow\uparrow$, with the arrows indicating the direction of $\mathbold{m}_1$ and $\mathbold{m}_2$ respectively, and $\uparrow$ being the unit vector $\mathbold{\hat{n}}_k$ along the easy axis. To decide whether the collinear state is stable, we must study the time evolution of the perturbation $\mathbold{u}_i$. This is done by performing a Fourier transform of the LLGS equation using our ansatz of $\mathbold{m}_i$, which is shown in Appendix \ref{app:FourierLLGS}. The end result can be written compactly as
+\begin{align}
+    \label{eq:EigenvalueEqn}
+    \left(\hat{A}\omega + \hat{V}\right)
+    \begin{pmatrix}
+     \tilde{\mathbold{u}}_1 \\
+     \tilde{\mathbold{u}}_2
+    \end{pmatrix}
+    = 0.
+\end{align}
+The matrices for the different geometries are given by
+\begin{subequations}
+\begin{align}
+    \hat{A}_{\text{bulk}} &=
+    \begin{pmatrix}
+     1-i\alpha\lambda_1 & 0 \\
+     0 & 1-i\alpha\lambda_2
+    \end{pmatrix}, \label{eq:Abulk}\\
+    \hat{A}_{\text{film}} &=
+    \begin{pmatrix}
+     1+i\alpha\lambda_1 & 0 \\
+     0 & 1+i\alpha\lambda_2
+    \end{pmatrix}, \label{eq:Afilm}\\
+    \nonumber\hat{V}_{\text{bulk}} &=
+    \omega_0\begin{pmatrix}
+     \lambda_1 & 0 \\
+     0 & \lambda_2
+    \end{pmatrix}
+    + \omega_J \begin{pmatrix}
+     \lambda_2 & -\lambda_1 \\
+     -\lambda_2 & \lambda_1
+    \end{pmatrix}
+    + i\omega_j^{(x)}\left[P_0
+    \begin{pmatrix}
+     -\lambda_1 & 0 \\
+     0 & 0
+    \end{pmatrix}
+    + P_1
+    \begin{pmatrix}
+     \lambda_1\lambda_2 & -1 \\
+     1 & -\lambda_1\lambda_2
+    \end{pmatrix}\right] \\
+    &\hspace{4.5mm} \frac{\omega_R^{(y)}}{1+\beta^2}\left[
+    \begin{pmatrix}
+     P_1^{(y)} & 0 \\
+     0 & P_2^{(y)}
+    \end{pmatrix}
+    - i \beta
+    \begin{pmatrix}
+     P_1^{(y)}\lambda_1 & 0 \\
+     0 & P_2^{(y)}\lambda_2
+    \end{pmatrix}\right], \label{eq:Vbulk}\\
+    \nonumber\hat{V}_{\text{film}} &=
+    -\omega_0\begin{pmatrix}
+     \lambda_1 & 0 \\
+     0 & \lambda_2
+    \end{pmatrix}
+    - \omega_J \begin{pmatrix}
+     \lambda_2 & -\lambda_1 \\
+     -\lambda_2 & \lambda_1
+    \end{pmatrix}
+    + i\omega_j^{(x)}\left[P_0
+    \begin{pmatrix}
+     -\lambda_1 & 0 \\
+     0 & 0
+    \end{pmatrix}
+    + P_1
+    \begin{pmatrix}
+     \lambda_1\lambda_2 & -1 \\
+     1 & -\lambda_1\lambda_2
+    \end{pmatrix}\right] \\
+    &\hspace{4.5mm} -\frac{\omega_R^{(x)}}{1+\beta^2}\left[
+    \begin{pmatrix}
+     P_0 & 0 \\
+     0 & P_1
+    \end{pmatrix}
+    + i \beta
+    \begin{pmatrix}
+     P_0\lambda_1 & 0 \\
+     0 & P_1\lambda_2
+    \end{pmatrix}\right]. \label{eq:Vfilm}
+\end{align}
+\end{subequations}
+Here we have defined the frequencies $\omega_0 = 2\gamma K/\mu_0M_s$, $\omega_J = \gamma J_{\text{RKKY}}/\mu_0 M_s d$, $\omega_j^{(x)} = \gamma \hbar j_x/2\mu_0M_sd$ and $\omega_R^{(x/y)} = \gamma \alpha_R m_e j_{x/y}/\hbar\mu_0 e M_s$. $\tilde{\mathbold{u}}_1$ and $\tilde{\mathbold{u}}_2$ are the Fourier transforms of $\mathbold{u}_1$ and $\mathbold{u}_2$, which is defined as $\mathbold{u}_i(t) = \int \tilde{\mathbold{u}}_i(\omega) \exp\left(-i\omega t\right) \d \omega/{2\pi}$. From this definition we can see that the perturbation is stable when the imaginary part of $\omega$ is less than zero, but when the imaginary part of $\omega$ is greater than zero the perturbation is exponentially increasing. To determine the sign of the imaginary component of $\omega$ we use \eqref{eq:EigenvalueEqn}. By rearranging the terms and multiplying with the inverse of $\hat{A}$, we see that $\omega$ is restricted to be one of the two possible eigenvalues of the $2\times2$ matrix $\hat{W} = -\hat{A}^{-1}\hat{V}$. The collinear state $\mathbold{m}_1=\lambda_1\mathbold{\hat{n}}_k$, $\mathbold{m}_2=\lambda_2\mathbold{\hat{n}}_k$ is then stable if both of the eigenvalues of $\hat{W}$ have negative imaginary components. This is of course dependent on the system parameters. We can then use this matrix to find the phase diagrams for when the collinear states are stable or not. There will be a region where none of the collinear states are stable for some choice of parameters, and it is in this region that an STO phase will have to be localized. However, a lack of a stable collinear state does not indicate that we have an STO phase. Our analytical model can only describe if a perturbation from a collinear state will increase or relax back to its original state, and if the perturbation is increasing it is not able to say whether the perturbation at some point becomes a self-sustained precession in the magnetization. 
+
+Something else that we need to consider is what defines an STO phase. The goal of the spin torque oscillator is to transform the applied direct current into an alternating current, utilizing the giant magnetoresistance effect. The resistance of our multilayer system is dependent on the respective alignment of the magnetic layers, so when we excite oscillations in the magnetizations we get an oscillating resistance of the system. The resistance is approximated by
+\begin{align}
+    R(t) = R_0 + \Delta R_1\mathbold{m}_0\cdot\mathbold{m}_1 + \Delta R_2\mathbold{m}_1\cdot\mathbold{m}_2.
+\end{align}
+To have a spin torque oscillator we must therefore require oscillations in at least $\mathbold{m}_0\cdot\mathbold{m}_1$ or $\mathbold{m}_1\cdot\mathbold{m}_2$. Oscillations in $\mathbold{m}_1$ in the form of a precession around the axis of $\mathbold{m}_0$ will therefore not cause any change in the resistance of the system, and such oscillations are hence not considered as an STO phase. We will therefore later establish numerically based on the time evolution of $\mathbold{m}_1$ and $\mathbold{m}_2$ when we have an STO phase in our system.
+
+Before moving on to numerics, we want to see if it is possible to find an analogy for the new terms in the LLGS equation that the Rashba field introduces. We see that the matrix proportional to $\omega_R$ in \eqref{eq:Vbulk} and \eqref{eq:Vfilm} is very similar to the $\hat{A}$ matrix in \eqref{eq:Abulk} and \eqref{eq:Afilm} in the case when $P_0=P_1$ and $P_1^{(y)}=P_2^{(y)}$. If we consider this case, we can incorporate the effects of RSOC into \eqref{eq:EigenvalueEqn} so that there is no explicit dependence on $\omega_R$ by introducing a new modified eigenfrequency $\omega^*$ and Gilbert damping $\alpha^*$. These modified parameters would have to satisfy
+\begin{subequations}
+\begin{align}
+    \omega^* &= \omega+\omega_R^{(x/y)}\frac{P}{1+\beta^2}, \\
+    \omega^*\alpha^* &= \omega\alpha+\omega_R^{(x/y)}\beta\frac{P}{1+\beta^2}.
+\end{align}
+\end{subequations}
+As we remember, we used the sign of the imaginary component of $\omega$ to determine whether a collinear state is stable or not. As $\omega_R^{(x/y)}$ is real, $\omega$ and $\omega^*$ have the same imaginary component, and the modified $\omega^*$ will therefore not have any impact on when a collinear state is stable or not. We therefore move on to consider the modified $\alpha^*$. The modified Gilbert parameter is a complex function, while the original $\alpha$ is entirely real. However, as $\alpha^*$ only appears in the product $\omega^*\alpha^*$ in the Fourier transform of the LLGS equation, and $\omega^*$ and $\omega^*\alpha^*$ only have a modification in their real components, the imaginary component of $\alpha^*$ is there to weigh up for the change in the real component. The physical effects of RSOC on our system can then be seen from the real component of $\alpha$, which is found to be
+\begin{align}
+    \Real(\alpha^*) = \frac{\left(\alpha\Real(\omega) + \beta\omega^{(x/y)}_R \frac{P}{1+\beta^2}\right)\left(\Real(\omega) + \omega^{(x/y)}_R \frac{P}{1+\beta^2}\right) + \alpha\Imag(\omega)^2}{\left(\Real(\omega) + \omega^{(x/y)}_R \frac{P}{1+\beta^2}\right)^2+\Imag(\omega)^2}.
+\end{align}
+We note that there is no restriction on the sign on either $\omega$ or $\omega_R^{(x/y)}$, making it possible for $\alpha^*$ to take on a wide range of values. In the special case $\Imag(\omega)=0$ there is a singularity in $\Real(\alpha^*)$ at $\omega_R^{(x/y)}=(1+\beta^2)\Real(\omega)/P$, so that $\Real(\alpha^*)$ can in fact take on any value. It is then possible for us to get negative values of $\Real(\alpha^*)$, which differs from $\alpha$ which can only be positive. This enables us to get an anti-damping term in the LLGS equation, which will help destabilize the collinear states along the effective field. If we consider the case when $\Imag(\omega)\neq0$, $\Real(\alpha^*)$ is a finite and smooth function with a single minimum and maximum. These can be found by differentiating $\Real(\alpha^*)$ with respect to $\omega_R$, 
+\begin{align}
+    \frac{\partial}{\partial\omega_R} \Real(\alpha^*) = -(\alpha-\beta)\frac{\Imag(\omega)^2\left(\Real(\omega)+2\omega_R\frac{P}{1+\beta^2}\right) + \Real(\omega)\left(\Real(\omega)+\omega_R\frac{P}{1+\beta^2}\right)^2}{\left(\Imag(\omega)^2+\left(\Real(\omega)+\omega_R\frac{P}{1+\beta^2}\right)^2\right)^2}
+\end{align}
+and are found to be
+\begin{align}
+    \omega_R = -\left(\frac{1+\beta^2}{P}\right)\frac{\Imag(\omega)^2\pm\Imag(\omega)\sqrt{\Imag(\omega)^2+\Real(\omega)^2}+\Real(\omega)^2}{\Real(\omega)}.
+\end{align}
+We see that the sign of the derivative is dependent on whether $\alpha>\beta$ or $\alpha<\beta$, in addition to the sign of $\Real(\omega)$ and $\omega_R$. If we are in a maximal region of $\Real(\alpha^*)$ (a region where the value is higher than the average), we can therefore move to a minimal region by switching the sign of $\omega_R$, which we can control by the direction of the current responsible for RSOC. 
+
+The minimum value of $\Real(\alpha^*)$ can still be negative even when $\Imag(\omega)\neq0$, despite the lack of a singularity. Whether we can get a negative value depends heavily on $\omega$, however, which is a complex function not only of the system parameters, but also of the collinear state. So even if RSOC helps to destabilize one collinear state by turning the Gilbert damping into an anti-damping term, it is not given that this will occur for all collinear states.
+
+\section{Numerical simulations}
+\subsection{Method}
+For our numerical solution we need to solve the LLGS equation \eqref{eq:LLGS} directly. This is a three dimensional vector equation, but due to the interaction between $\mathbold{m}_1$ and $\mathbold{m}_2$ through the RKKY-interaction and the spin-transfer torques, we need to solve for both vectors simultaneously. This makes the LLGS equation for this case six coupled differential equations that is highly non-linear, due to the cubic terms appearing due to STT. The advantage with this equation over the LLG equation that we got for the skyrmion case, however, is that the solution is only temporally varying, making this an ordinary differential equation (ODE) instead of the partial differential equation (PDE) we got for the skyrmion. ODEs are in general much easier to solve than PDEs, and software such as \texttt{MATLAB} has well-implemented solvers for such problems. We will here utilize \texttt{MATLAB}'s \texttt{ode45} solver. One problem that was encountered when solving the LLGS equation numerically was one that is familiar to us from the skyrmion case; the modulus of the magnetization unit vector was not always conserved to unity. For some parameters the modulus even oscillated between being one and zero, which clearly is a type of behavior we want to eliminate. For the skyrmion case we narrowed the problem down to either being a singularity in the spatial derivatives or the fact that conservation of the unit modulus was not explicitly enforced in the solution (only through the form of the LLG equation, which should conserve the modulus). In the LLGS equation we have no spatial derivatives, but like the skyrmion case we also have not explicitly enforced the unity modulus in the solution. One way to implement this is to replace quadratic factors in a single magnetization component $m_i^2$ by $1-m_j^2-m_k^2$ to enforce the unity relation
+\begin{align}
+    m_x^2+m_y^2+m_z^2=1.
+\end{align}
+For the solution of the skyrmion motion this method was not feasible, as we had no quadratic factors in any single magnetization component, and the method does not work well for linear factors as we get an ambiguity in the sign when taking the square root of the relation above. For the LLGS equation in the STO case this method is feasible due to the different type of STT terms. This method is not perfect, we still get a magnetization modulus that decreases with time, but the magnitude of this decrease is negligible.
+
+Once the LLGS equation is solved for all six vector components, we need to analyze the results. This analysis will primarily decide if the solution is in a collinear state, an STO phase, or none of the former. We will also perform a Fourier transform of the solutions for some sets of parameters to see the frequency spectrum of a potential STO phase. To establish if the solution is a collinear state or an STO phase we consider the last 20\% of the time-interval of the calculated solution, and then compare the latter half of that to the former half. In each half of the interval we first calculate the average value of $\mathbold{m}_0\cdot\mathbold{m}_1$ and $\mathbold{m}_1\cdot\mathbold{m}_2$, and how much the solution varies from that average during the interval. If the variation in the latter interval is above some cutoff factor between zero and one times the variation in the former interval, and the average variation is above some minimal value, we classify the solution as an STO phase. This way an oscillation that decays significantly and very small oscillations will not be classified as an STO phase. In our calculations we set the cutoff-factor to 0.9, and the minimum variance necessary to have an STO phase to be $10^{-6}$ per time unit in the latter 10\% of the solution interval. If the conclusion is that the solution is not an STO phase, we classify the state based on the final value of the solution of the vector components. If the final value of the two vector components along the easy axis is $\pm1$ to some degree of accuracy and the remaining four are zero, we classify the solution to be in the corresponding collinear state. If that is also not the case, we classify the system as being in a canted state. A canted state is where the magnetization has either relaxed to a state that is not parallel to the easy axis, or the system is oscillating in a manner that keeps $\mathbold{m}_0\cdot\mathbold{m}_1$ and $\mathbold{m}_1\cdot\mathbold{m}_2$ constant (and thereby not generating oscillations in the resistance). 
+\subsection{Phase diagrams}
+\subsection{Power spectrums}
