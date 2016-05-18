@@ -67,7 +67,13 @@ Definining the ratio $AK/D^2$ as a parameter $C$, one can solve this equation nu
 as $\cos\psi$ is antisymmetric under a swap in helicities, and $\frac{\partial^2\theta}{\partial\tilde{\rho}^2}$, $\frac{\partial\theta}{\partial\tilde{\rho}}$, $\cos\theta_{\psi_i}$ are all antisymmetric under the relation above.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{Figures/SkyrmionRadialProfiles.pdf} 
+\begin{tikzpicture}
+\node[above right] (img) at (0,0)
+{\includegraphics[width=0.6\textwidth]{Figures/SkyrmionRadialProfilesv2.pdf} };
+ \node [right=of img,rotate=90,anchor=north,yshift=10.7cm,xshift=0.2cm] {$\theta(\tilde{r})$}; 
+ \node at (150pt,10pt) {\Large{$\tilde{r}$}};
+\end{tikzpicture}
+%\includegraphics[width=0.6\textwidth]{Figures/SkyrmionRadialProfiles.pdf} 
 \caption{The solution of the out-of-plane angle $\theta$ of the skyrmion profile for different values of $C$.}
 \label{fig:ThetaProfile} 
 \end{center}
@@ -90,11 +96,11 @@ The two different skyrmions for the two different choices in helicities $\psi$ a
 \newline
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/HedgehogSkyrmionEverschor.png}
+  \includegraphics[width=\linewidth]{Figures/HedgehogSkyrmion}
   \caption{}
   \label{fig:HedgehogSkyrmion3}
 \end{subfigure}
-\caption{A hedgehog skyrmion with a helicity \textbf{(a)} $\psi = 0$ and \textbf{(b)} $\psi = \pi$. The in-plane component of the magnetization is visualized by the vectors, while the $z$-component is shown in the background color. A 3D representation of a hedgehog skyrmion with $\psi = 0$ is shown in \textbf{(c)}, this figure is extracted from \cite{EverschorDissertation}.}
+\caption{A hedgehog skyrmion with a helicity \textbf{(a)} $\psi = 0$ and \textbf{(b)} $\psi = \pi$. The in-plane component of the magnetization is visualized by the vectors, while the $z$-component is shown in the background color. A 3D representation of a hedgehog skyrmion with $\psi = 0$ is shown in \textbf{(c)}, this figure is based on a figure in \cite{EverschorDissertation}.}
 \label{fig:HedgehogSkyrmions}
 \end{figure}
 
@@ -167,24 +173,40 @@ We now have all the results we need to consider the parity of the LLG equation, 
 Moving on to the skyrmion magnetization pattern we use that $\mathbold{M}$ is even under parity, while its components $M_x$, $M_y$ and $M_z$ are not. Remembering that $\mathbold{\hat{M}} = \left(\cos\Phi\sin\theta, \sin\Phi\sin\theta, \cos\theta\right)$ we see that all the components are odd under parity if $\Phi$ transforms as $\Phi \rightarrow \Phi \pm \pi$ and $\theta$ transforms as $\theta\rightarrow\pi-\theta$. This is reminiscent of something we have seen earlier. In Section \ref{sec:Skyrmions} we noted that the solutions for the two different helicities were related by \eqref{eq:ThetaHelicityRelation}, which is the same as the way $\theta$ transforms under parity. In addition the two possible helicities for the different types of skyrmions, hedgehog and spiral, are always a phase $\pm\pi$ apart. The term $\pm\pi$ in the transformation of $\Phi$ under parity can then be included in the helicity, meaning the parity transformation changes the helicity of the skyrmion. The two possible solutions of the skyrmions, such as the hedgehog skyrmions in Figure \ref{fig:HedgehogSkyrmion1} and \ref{fig:HedgehogSkyrmion2}, are therefore related to each other via parity. If the skyrmion in \ref{fig:HedgehogSkyrmion1} is the solution in a right-handed coordinate system, the skyrmion in \ref{fig:HedgehogSkyrmion2} is the same solution in a left-handed coordinate system, and vice versa.
 \begin{figure}[h!]
 \centering
+\begin{subfigure}{.39\textwidth}
+  \centering
+  \includegraphics[width=1.0\linewidth]{Figures/UpDownSpinMirror}
+  \caption{}
+\end{subfigure}%
+\hspace{1cm}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.0\linewidth]{Figures/LeftSpinMirror}
+  \caption{}
+\end{subfigure}
+\caption{An electron that has a spin vector parallel to a mirror plane will have its spin reversed in its mirror image, as shown in \textbf{(a)}. An electron with a spin perpendicular to the mirror plane, however, will have the same spin as its mirror image as shown in \textbf{(b)}.}
+\label{fig:SpinMirror}
+\end{figure}
+\begin{figure}[h!]
+\centering
 \begin{subfigure}{.95\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/MirroredSkyrmion.pdf}
+  \includegraphics[width=\linewidth]{Figures/MirroredHedgehogSkyrmion.pdf}
   \caption{}
   \label{fig:MirrorHedgehog}
 \end{subfigure}
 
 \begin{subfigure}{.95\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/MirroredSpiralSkyrmion.pdf}
+  \includegraphics[width=\linewidth]{Figures/MirroredSpiralSkyrmionv2.pdf}
   \caption{}
   \label{fig:MirrorSpiral}
 \end{subfigure}
-\caption{A hedgehog skyrmion is an achiral object, as its mirror image matches itself, which is illustrated in \textbf{(a)}. A spiral skyrmion, however, is chiral and switches helicity in its mirror image as illustrated in \textbf{(b)}. The skyrmion figures are extracted from \cite{EverschorDissertation}.}
+\caption{The mirror images of \textbf{(a)} a hedgehog skyrmion, and \textbf{(b)} a spiral skyrmion. The mirror images can not be aligned with the original image, and the skyrmions are therefore chiral objects. The skyrmion figures are based on the figures in \cite{EverschorDissertation}.}
 \label{fig:ChiralitySkyrmions}
 \end{figure}
 
-As a final comment on the symmetries of the skyrmions, we want to discuss their chirality. An object is defined to be chiral if its mirror image or reflection is impossible to align with the original object. The most common example of chirality is hands. When holding your right hand in front of a mirror, the image you see in the mirror is that of a left hand. Obviously, a right hand and a left hand are distinct, and can therefore not be aligned with each other. Hands are then chiral objects. In Figure \ref{fig:ChiralitySkyrmions} we consider the chirality of hedgehog and spiral skyrmions. As one can see in Figure \ref{fig:MirrorHedgehog} the hedgehog skyrmion is not a chiral object, its mirror image is identical to the original object. The spiral skyrmion, however, is chiral as seen in Figure \ref{fig:MirrorSpiral}, as its mirror image has a different helicity than the original object. While both of the skyrmion types are stabilized by the parity breaking Dzyaloshinskii--Moriya interaction, only the spiral skyrmion is a chiral structure.
+As a final comment on the symmetries of the skyrmions, we want to discuss their chirality. An object is defined to be chiral if its mirror image or reflection is impossible to align with the original object. The most common example of chirality is hands. When holding your right hand in front of a mirror, the image you see in the mirror is that of a left hand. Obviously, a right hand and a left hand are distinct, and can therefore not be aligned with each other. Hands are then chiral objects. When we are considering a mirror image of a skyrmion, we need to be careful regarding what we take the mirror image of. The mirror image of a skyrmion is \textit{not} the mirror image of the skyrmion magnetization vector field. The magnetization of the skyrmion stems from the average magnetic moment inside a small volume, and the magnetic moment is proportional to the spinning of the electron. As we see in Figure \ref{fig:SpinMirror}, when we mirror the spinning motion of the electron the spin vector is not its mirror image. The component of the spin vector parallel to the mirror plane is flipped, while the perpendicular component is the same for both the original electron and its mirror image. This type of behavior occurs for the mirror image of pseudovectors (also known as axial vectors). As the magnetization is also a pseudovector, the mirror images of the skyrmion profiles will behave in the same manner, and are as shown in Figure \ref{fig:ChiralitySkyrmions}. No matter how one rotates the mirror images of the skyrmion magnetization, one can not align them with the original skyrmion. The skyrmions are therefore chiral. This is a consequence of the broken parity of the skyrmion magnetization profile due to the Dzyaloshinskii--Moriya interaction. If the parity transformation of an object is not an identity transformation, it is a chiral object.
 
 \section{The Thiele equation}
 In the special case of a time-dependent magnetization pattern that can be written as $\mathbold{M}(\mathbold{r}-\mathbold{R}(t))$, Thiele recognized \cite{Thiele1973} that the time derivative can be written as 
@@ -192,7 +214,7 @@ In the special case of a time-dependent magnetization pattern that can be writte
 \label{eq:ThieleRelation}
 \frac{\textrm{d} \mathbold{M}}{\textrm{d} t} = \frac{\partial \mathbold{R}}{\partial t}\frac{\partial \mathbold{M}}{\partial \mathbold{R}} = \frac{\partial \mathbold{R}}{\partial t} (-\frac{\partial \mathbold{M}}{\partial \mathbold{r}}) = -(\mathbold{v}\cdot\nabla)\mathbold{M}.
 \end{align}
-The form $\mathbold{M}(\mathbold{r}-\mathbold{R}(t))$ indicates that the magnetization pattern performs a translation without deformation of the original magnetization profile. Once the equilibrium profile at some time $t_0$ is known, the motion of the entire magnetization pattern can be described by the time-dependent position of some distinct part of the magnetization pattern, like the skyrmion-core. If one replaces all time derivatives with Thiele's relation as given above in the LLG equation, one can rewrite the LLG equation to the Thiele equation (as shown by Kr\"{u}ger in \cite{krugerDissertation}):
+The form $\mathbold{M}(\mathbold{r}-\mathbold{R}(t))$ indicates that the magnetization pattern performs a translation without deformation of the original magnetization profile. Once the equilibrium profile at some time $t_0$ is known, the motion of the entire magnetization pattern can be described by the time-dependent position of some distinct part of the magnetization pattern, like the skyrmion core. If one replaces all time derivatives with Thiele's relation as given above in the LLG equation, one can rewrite the LLG equation to the Thiele equation (as shown by Kr\"{u}ger in \cite{krugerDissertation}):
 \begin{align}
 \label{eq:Thiele}
 \mathbold{F} + \mathbold{G}\times(\mathbold{v}+b_J\mathbold{\hat{j}}_e) + D(\alpha\mathbold{v}+\beta b_J\mathbold{\hat{j}}_e) = 0.
@@ -209,8 +231,7 @@ This is a force equation with the definitions
 D &= - \frac{\pi M_s \mu_0 d}{\gamma '} \int_0^{\infty} \d r \left(r\left(\frac{\partial \theta}{\partial r}\right)^2+\frac{\sin^2\theta}{r}\right),
 \end{align}
 \end{subequations}
-where $d$ is the thickness of the film. The vector $\mathbold{F}$ is a force originating from an inhomogenous energy landscape or a magnetic field that is not parallel to the local magnetization (in other words a field not aligned with the effective field). $\mathbold{G}$ is a gyrovector that only depends on the direction of the magnetization in the skyrmion core and far away from the core. The force in the Thiele equation that is dependent on $\mathbold{G}$ is often called the Magnus force, and is a counter force to the Lorentz forces from emergent electromagnetic fields around the skyrmion \cite{Everschor-Sitte2014}, which we will discuss in the next section. Lastly, $D$ denotes the strength of a dissipative force that moves the skyrmion in the direction of the electron flow and it is dependent on the radial profile of the out-of-plane angle $\theta$ of the skyrmion. An illustration of the force balance in the Thiele equation is shown in Figure \ref{fig:Thiele}.
-
+where $d$ is the thickness of the film. The vector $\mathbold{F}$ is a force originating from an inhomogenous energy landscape or a magnetic field that is not parallel to the local magnetization (in other words a field not aligned with the effective field). $\mathbold{G}$ is a gyrovector that only depends on the direction of the magnetization in the skyrmion core and far away from the core. The force in the Thiele equation that is dependent on $\mathbold{G}$ is often called the Magnus force, and is a counter force to the Lorentz forces from emergent electromagnetic fields around the skyrmion \cite{Everschor-Sitte2014}, which we will discuss in the next section. Lastly, $D$ denotes the strength of a dissipative force that moves the skyrmion in the direction of the electron flow and it is dependent on the radial profile of the out-of-plane angle $\theta$ of the skyrmion. An illustration of the force balance in the Thiele equation is shown in Figure \ref{fig:Thiele}. The Thiele equation is less rigid than the LLG equation due to the ansatz that there is an absence of deformation of the skyrmion, but in the case of a pure translational motion of the skyrmion the Thiele and LLG equations are entirely equivalent.
 \begin{figure}[h!]
 \centering
   \centering

@@ -3,7 +3,7 @@ Since it was shown theoretically by Berger \cite{Berger1978,Berger1984,Berger199
 
 It has been shown that skyrmions can also be moved by applying a current, and they can be moved by a much weaker current than magnetic domain walls \cite{Jonietz2010,Yu2012}, which is the reason for the new interest in them. Recently it has also been shown that the motion of skyrmions can also be guided through the means of electric fields \cite{Upadhyaya2015}. It has also been discovered that through the help of constricted geometries and electrical currents, we can create skyrmions in chiral magnets \cite{Iwasaki2013,Sampaio2013,Jiang2015}. In addition we are able to detect skyrmions with an unpolarized current \cite{Monchesky2015}. These new developments will greatly help us in utilizing magnetic skyrmions in memory applications, such as racetracks. 
 
-The goal of this chapter is to study the equations of motion for the skyrmion, both analytically and numerically, so that we can see how we can steer the motion of the skyrmion in the direction we want. We will consider the motion due to an electric field and an electric current, which will cause the magnetization to experience Rashba fields due to the broken inversion symmetry.
+The goal of this chapter is to study the equations of motion for the skyrmion, both analytically and numerically, so that we can see how we can steer the motion of the skyrmion in the direction we want. We will consider the motion due to an electric field and an electric current, which will cause the magnetization to experience Rashba fields due to the broken inversion symmetry. An understanding of how we can control the motion of skyrmions by electrical means will be very useful in regards to how we can utilize skyrmions in memory applications.
 \section{Skyrmion velocity}
 The extended LLG equation that includes Rashba spin-orbit coupling and spin-transfer torques is given by
 \begin{align}
@@ -33,10 +33,10 @@ We now have the force resulting from Rashba spin-orbit coupling, the next step i
 \begin{subequations}
 \begin{align}
 E(\mathbold{r}) &= E_x x + E_y y \\
-&= E_x x_0 + E_y y_0 + E_x r \cos\phi + E_y r \sin\phi.
+&= E_x x_0 + E_y y_0 + E_x r \cos\phi + E_y r \sin\phi,
 \end{align}
 \end{subequations}
-If we integrate this energy density over the entire film, we then find that the total energy contribution from the electric field becomes
+with $\left( x_0,y_0\right)$ indicating the location of the skyrmion core. If we integrate this energy density over the entire film, we then find that the total energy contribution from the electric field becomes
 \begin{align}
 \nonumber U_{EF} &= \int \d V \epsilon_{EF} \\
 \nonumber &= \eta \int_0^d \d z \int_0^{2\pi}\d \phi \int_0^{\infty}\d r\left( E_x x_0 + E_y y_0 + E_x r \cos\phi + E_y r \sin\phi \right) r \sin^2\theta \\
@@ -147,24 +147,24 @@ Here the solution of $\theta$ inside the integrals is given in the dimensionless
 \centering
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/I1Plot.pdf}
+  \includegraphics[width=\linewidth]{Figures/I1Plot.jpg}
   \caption{}
   \label{fig:ThetaInt1}
 \end{subfigure}
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/I2Plot.pdf}
+  \includegraphics[width=\linewidth]{Figures/I2Plot.jpg}
   \caption{}
   \label{fig:ThetaInt2}
 \end{subfigure}
 \linebreak
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/I3Plot.pdf}
+  \includegraphics[width=\linewidth]{Figures/I3Plot.jpg}
   \caption{}
   \label{fig:ThetaInt3}
 \end{subfigure}
-\caption{Numerical evaluations of the integrals (a) $I_1$, (b) $I_2$ and (c) $I_3$ as a function of the skyrmion parameter $C$.}
+\caption{Numerical evaluations of the integrals \textbf{(a)} $I_1$, \textbf{(b)} $I_2$ and \textbf{(c)} $I_3$ as a function of the skyrmion parameter $C$.}
 \label{fig:ThetaInts}
 \end{figure}
 
@@ -256,19 +256,19 @@ In the field driven case where the skyrmion motion is solely driven by an inhomo
 \begin{align}
 E_g^{\textrm{(crit)}} = \frac{v_{\textrm{pin}}}{C_E}.
 \end{align}
-The numerical values of $b_J^{\text{(crit)}}$ and $E_g^{\text{(crit)}}$ for different values of the skyrmion parameter $C$ are shown in Figure \ref{fig:CritCurrentField}. As one can see, the behavior of the critical current and field gradient are quite different. The critical current is a strictly decreasing function of $C$, but the decrease is only significant for high values of $\beta$. The critical field gradient, however, is a strictly increasing function of $C$, and increases significantly from $C = 0.5$ to $C = 2.5$. If the unit length $A/D$ is kept constant, the size of the skyrmion decreases with increasing $C$. Still assuming that $A/D$ is kept constant, one sees that in the current driven case smaller skyrmions have a lower critical current, while in the electric field driven case larger skyrmions have a lower critical field gradient. This can be understood rather intuitively. The spin-transfer torque scales with the spatial variation of the magnetization, so a small skyrmion with a rapidly varying magnetization will feel a stronger torque than a larger skyrmion. Whereas for the electric field driven case the spatial variation of the free energy has a larger impact on a large skyrmion than a small one.
+The numerical values of $b_J^{\text{(crit)}}$ and $E_g^{\text{(crit)}}$ for different values of the skyrmion parameter $C$ are shown in Figure \ref{fig:CritCurrentField}. As one can see, the behavior of the critical current and field gradient are quite different. The critical current is a strictly decreasing function of $C$, but the decrease is only significant for high values of $\beta$. The critical field gradient, however, is a strictly increasing function of $C$, and increases significantly from $C = 0.5$ to $C = 2.5$. If the unit length $A/D$ is kept constant, the size of the skyrmion decreases with increasing $C$ (which can be seen from Figure \ref{fig:ThetaProfile}). Still assuming that $A/D$ is kept constant, one sees that in the current driven case smaller skyrmions have a lower critical current, while in the electric field driven case larger skyrmions have a lower critical field gradient. This can be understood rather intuitively. The non-adiabatic spin-transfer torque acts as a drag force on the skyrmion in the Thiele equation. This drag force attempts to move the skyrmion in the direction of the conduction electrons. Normally the total non-adiabatic STT is larger for larger skyrmions, but with the presence of RSOC we get an effectively reduced non-adiabatic STT. This reduction is greater for larger skyrmions due to the larger area where the conduction electrons polarized along the Rashba field can transfer their spin to the local magnetization. Because of this effective reduction of the non-adiabatic STT larger skyrmions experience less drag along the motion of the conduction electrons, and smaller skyrmions then require a smaller current to be moved than large ones. If RSOC was not present the situation would be reversed, as there is no reduction of the drag resulting from non-adiabatic STT, and larger skyrmions would have a lower critical current due to the larger drag force acting on them. For the electric field driven case the spatial variation of the free energy has a larger impact on a large skyrmion than a small skyrmion.
 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/CritCurrent.pdf}
+  \includegraphics[width=\linewidth]{Figures/CritCurrent.jpg}
   \caption{}
   \label{fig:CritCurrent}
 \end{subfigure}
 \begin{subfigure}{.49\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{Figures/CritField.pdf}
+  \includegraphics[width=\linewidth]{Figures/CritField.jpg}
   \caption{}
   \label{fig:CritField}
 \end{subfigure}

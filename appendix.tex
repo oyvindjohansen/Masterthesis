@@ -127,7 +127,14 @@ Starting from the left of \eqref{eq:LLGS_app}, the terms to first order in $u$ t
 We want to express the equations above as a linear combination of $\tilde{\mathbold{u}}_i$, as then it will be possible to get the LLGS equation on the form of an eigenvalue equation. For some terms, such as \eqref{eq:LLGS_linear_u} this will be trivial, whereas for other terms, such as \eqref{eq:LLGS_cross_u} it becomes a little harder. To deal with these terms that result from the cross-products, we utilize the periodic nature of the Fourier transform. In Figure \ref{fig:VectorPhases} we see that the terms in \eqref{eq:LLGS_Fourier_terms} that can not be written directly as a linear combination in $\tilde{\mathbold{u}}_i$ are terms that are a phase $\pi/2$ ahead or behind $\tilde{\mathbold{u}}_i$. A rotation of something complex by an angle $\pi/2$ is equivalent to multiplying it with the imaginary number $i$. Therefore, $\left(- \tilde{u}^y_i\mathbold{\hat{x}} + \tilde{u}^x_i \mathbold{\hat{y}} \right) = i \left(\tilde{u}^x_i\mathbold{\hat{x}} + \tilde{u}^y_i \mathbold{\hat{y}} \right)$ and $\left( \tilde{u}^y_i\mathbold{\hat{x}} - \tilde{u}^x_i \mathbold{\hat{y}} \right) = -i \left(\tilde{u}^x_i\mathbold{\hat{x}} + \tilde{u}^y_i \mathbold{\hat{y}} \right)$.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{Figures/VectorPhases.pdf} 
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=0.6\textwidth]{Figures/VectorPhasesv2.pdf}};
+\node at (155pt,270pt) {\Large{$y$}};
+\node at (270pt,125pt) {\Large{$x$}};
+\node at (60pt,230pt) {\Large{$\left(-v,u\right)$}};
+\node at (220pt,205pt) {\Large{$\left(u,v\right)$}};
+\node at (220pt,50pt) {\Large{$\left(v,-u\right)$}};
+\end{tikzpicture}
 \caption{The vector $(-v,u)$ is a phase $\pi/2$ ahead of the vector $(u,v)$, while the vector $(v,-u)$ is a phase $\pi/2$ behind the vector $(u,v)$.}
 \label{fig:VectorPhases} 
 \end{center}
