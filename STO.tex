@@ -205,4 +205,98 @@ For the solution of the skyrmion motion this method was not feasible, as we had 
 
 Once the LLGS equation is solved for all six vector components, we need to analyze the results. This analysis will primarily decide if the solution is in a collinear state, an STO phase, or none of the former. We will also perform a Fourier transform of the solutions for some sets of parameters to see the frequency spectrum of a potential STO phase. To establish if the solution is a collinear state or an STO phase we consider the last 20\% of the time-interval of the calculated solution, and then compare the latter half of that to the former half. In each half of the interval we first calculate the average value of $\mathbold{m}_0\cdot\mathbold{m}_1$ and $\mathbold{m}_1\cdot\mathbold{m}_2$, and how much the solution varies from that average during the interval. If the variation in the latter interval is above some cutoff factor between zero and one times the variation in the former interval, and the average variation is above some minimal value, we classify the solution as an STO phase. This way an oscillation that decays significantly and very small oscillations will not be classified as an STO phase. In our calculations we set the cutoff-factor to 0.9, and the minimum variance necessary to have an STO phase to be $10^{-6}$ per time unit in the latter 10\% of the solution interval. If the conclusion is that the solution is not an STO phase, we classify the state based on the final value of the solution of the vector components. If the final value of the two vector components along the easy axis is $\pm1$ to some degree of accuracy and the remaining four are zero, we classify the solution to be in the corresponding collinear state. If that is also not the case, we classify the system as being in a canted state. A canted state is where the magnetization has either relaxed to a state that is not parallel to the easy axis, or the system is oscillating in a manner that keeps $\mathbold{m}_0\cdot\mathbold{m}_1$ and $\mathbold{m}_1\cdot\mathbold{m}_2$ constant (and thereby not generating oscillations in the resistance). 
 \subsection{Phase diagrams}
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/PRBPhase.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0$, $\alpha_\text{R} = 0$ eV$\cdot$m.}
+\end{subfigure}%
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/BulkXi0R5.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0$, $\alpha_\text{R} = 1.85\cdot10^{-10}$ eV$\cdot$m.}
+\end{subfigure}
+
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/BulkXi15R5.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0.015$, $\alpha_\text{R} = 1.85\cdot10^{-10}$ eV$\cdot$m.}
+\end{subfigure}%
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/BulkXi15R25.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0.015$, $\alpha_\text{R} = 9.26\cdot10^{-10}$ eV$\cdot$m.}
+\end{subfigure}
+\caption{Phase diagrams for the bulk geometry. For all phase diagrams the values $\alpha=0.01$, $P=0.5$, $j_y=10^9$ A/cm$^2$, $K=8\cdot10^4$ J/m$^3$, $d=3$ nm are assumed. The red regions indicate an STO phase, while the white regions are canted states. }
+\label{fig:STOBulkPhase}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/FilmXi0R25.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0$, $\alpha_\text{R} = 9.26\cdot10^{-10}$ eV$\cdot$m.}
+  \label{fig:STOFilmXi0R25}
+\end{subfigure}%
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/FilmXi05R25.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{$\beta = 0.005$, $\alpha_\text{R} = 9.26\cdot10^{-10}$ eV$\cdot$m.}
+\end{subfigure}
+
+\caption{Phase diagrams for the film geometry. For all phase diagrams the values $\alpha=0.01$, $P=0.5$, $K=8\cdot10^4$ J/m$^3$, $d=3$ nm are assumed. The red regions indicate an STO phase, while the white regions are canted states. }
+\label{fig:STOFilmPhase}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/FilmXi0R25dd.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{}
+\end{subfigure}%
+\begin{subfigure}{.49\textwidth}
+  \centering
+    \begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=1\textwidth]{Figures/FilmXi0R25uu.png}};
+\node [right=of img,rotate=90,anchor=north,yshift=9.3cm,xshift=0cm] {\large{$J_{\text{RKKY}}$ (mJ/m$^2$)}}; 
+\node at (120pt,0pt) {\large{$j_x$ (10$^8$ A/cm$^2$)}};
+\end{tikzpicture}
+  \caption{}
+\end{subfigure}
+
+\caption{The stability of the $\uparrow\uparrow$ state in the thin film geometry for $\beta = 0$, $\alpha_\text{R} = 9.26\cdot10^{-10}$ eV$\cdot$m is found to be very dependent on the initial conditions. In \textbf{(a)} the initial state is chosen to be close to $\downarrow\downarrow$ for $J_{\text{RKKY}}>0$, while in \textbf{(b)} the initial state is chosen to be close to $\uparrow\uparrow$ in the same region. In both cases the initial state is chosen to be close to $\downarrow\uparrow$ for $J_{\text{RKKY}}<0$.}
+\label{fig:STOFilmStability}
+\end{figure}
+
 \subsection{Power spectrums}
