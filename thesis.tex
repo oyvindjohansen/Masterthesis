@@ -44,6 +44,9 @@
 \fancyhead[OR]{\nouppercase\rightmark}
 \fancyhead[ER,OL]{\thepage}
 
+\usepackage[final]{pdfpages}
+%\setboolean{@twoside}{false} % For centering of included pdf
+
 \setcounter{totalnumber}{5}
 \renewcommand{\textfraction}{0.05}
 \renewcommand{\topfraction}{0.95}
@@ -58,6 +61,7 @@
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
 
+\newcommand{\etal}{\emph{et al.}}
 
 
 \setcounter{totalnumber}{5}
@@ -97,7 +101,7 @@
 
 \HRule \\[0.4cm]
 %{ \huge \bfseries The dynamics of skyrmions in an electric field}\\[0.4cm] % Title of your document
-{ \huge \bfseries Electric control of skyrmion dynamics and spin torque oscillators in magnetic materials with Rashba spin-orbit coupling}\\[0.4cm]
+{ \huge \bfseries Electric control of skyrmion dynamics and spin torque oscillators in magnetic materials with inversion asymmetry}\\[0.4cm]
 \HRule \\[1.5cm]
  
 %----------------------------------------------------------------------------------------
@@ -151,15 +155,20 @@ Prof. Jacob \textsc{Linder} % Supervisor's Name
 
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
+In this thesis the skyrmion velocity in the presence of spin-transfer torques, Rashba spin--orbit coupling and a constant electric field gradient is derived analytically based on a collective coordinate approach in the Thiele formalism. This analytical result is also derived in the presence of a phenomenological pinning force. The results show that the spin--orbit coupling can be effectively considered as a modification of the non-adiabatic spin-transfer torque. The electric field gradient causes a motion of the skyrmion along equipotential lines, in addition to a damped motion in the opposite direction of the gradient to a lower energy state. The analytical calculations are compared to a full numerical solution of the Landau--Lifshitz--Gilbert equation. We also study the effects of Rashba spin--orbit coupling on magnetic multilayer spin torque oscillators. It is discovered that the spin--orbit coupling can be compared to a modification of the Gilbert damping, to the extent that we can get an anti-damping term in the Landau--Lifshitz--Gilbert--Slonczewski equation. This anti-damping term can help destabilize collinear states, and increase the size of the oscillating phase. Moreover, we find an oscillating phase in both ferromagnetically and antiferromagnetically coupled magnetic moments, where the moments are of equal magnitude, which is a new result. The Rashba spin--orbit coupling also allows for a wider tunability of frequency spectra of the spin torque oscillators.
 \newpage
 
-\chapter*{Sammendrag}
-\addcontentsline{toc}{chapter}{Sammendrag}
+\chapter*{Samandrag}
+I denne masteroppgåva er skyrmionhastigheita i nærvær av spinnoverførande dreiemoment, Rashba spinn-bane-kopling og ein konstant elektrisk feltgradient utleda analytisk basert på ein kollektiv koordinattilnærming i Thiele-formalismen. Dette analytiske resultatet er også utleda i nærvær av ein fenomenologisk låsingkraft. Resultata visar at spinn-bane-koplinga kan effektivt bli sett på som ein modifisering av det ikkje-adiabatiske spinnoverførande dreiemomentet. Den elektriske feltgradienten førar til ei rørsle av skyrmionet langs ekvipotensiallinjar, i tillegg til ei dempa rørsle i motsatt retning av gradienten til ei lågare energitilstand. Dei analytiske utrekningane er samanlikna med ei full numerisk løysing av Landau--Lifshitz--Gilbert likninga. Vi studerar også effektane av Rashba spinn-bane-kopling på magnetiske fleirlags spinn-dreiemoment-oscillatorar. Det er oppdaga at spinn-bane-koplinga kan bli samanlikna med ei modifisering av Gilbert dempinga, i den grad at vi kan få eit antidempingsledd i Landau--Lifshitz--Gilbert--Slonczewski likninga. Dette antidempingsleddet kan hjelpe til å destabilisera kollineære tilstandar, og auke storleiken til den oscillerande fasen. Dessuten finn vi ein oscillerande fase i både ferromagnetiske og antiferromagnetiske kobla magnetiske moment, der momenta er av lik storleik, som er eit nytt resultat. Rashba spinn-bane-koplinga tillatar også ein større tunbarheit av frekvensspektruma til spinn-dreiemoment-oscillatorane.
+\addcontentsline{toc}{chapter}{Samandrag}
 \newpage
 
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
-%\\
+This thesis on quantum condensed matter theory is the end result of a five year integrated master programme in Applied Physics and Mathematics at the Norwegian University of Science and Technology.
+
+I would like to thank my supervisor Prof. Jacob Linder for excellent guidance. His insight into the field of quantum condensed matter theory and ability to find unexplored topics of interest have been extremely valuable to this thesis. I would also like to thank Jabir Ali Ouassou for helpful discussions and information concerning numerical simulations. Finally, I would like to thank my parents, sisters and fellow classmates for their support. \\
+
 
 \begin{minipage}{0.95\textwidth}
 \begin{flushright}
@@ -187,7 +196,7 @@ June 2016
 
 %\section{Spin orbit torques}
 
-%\section{Rashba spin-orbit coupling}
+%\section{Rashba spin--orbit coupling}
 
 %\section{Magnons}
 
@@ -197,14 +206,21 @@ June 2016
 
 \include{STO}
 
-\chapter{Conclusion}
+\include{Conclusion}
 
 \bibliography{thesis}
 \bibliographystyle{unsrt}
 
 \begin{appendices}
 \include{appendix}
-
+\chapter{Spin torque oscillator research article}
+\vspace{3cm}
+\makebox[\textwidth][c]{%
+    \begin{minipage}{0.8\textwidth}
+        Here we enclose the article based on our results regarding spin torque oscillators, currently undergoing review in Nature Scientific Reports.
+    \end{minipage}}
+\cleardoublepage
+\includepdf[pages=-]{STO_article.pdf}
 \end{appendices}
 
 

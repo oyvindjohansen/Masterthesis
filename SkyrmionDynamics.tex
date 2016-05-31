@@ -1,35 +1,36 @@
 \chapter{Electric control of skyrmion motion} \label{chap:SkyrmionDynamics}
-Since it was shown theoretically by Berger \cite{Berger1978,Berger1984,Berger1992,Berger1996} and Slonczewski \cite{Slonczewski1996} that a spin-polarized current could exert a torque on the magnetization in magnetic materials, there has been a lot of focus on electrical control of magnetization dynamics. Through the spin-transfer torque mechanism, one was able to switch the magnetization direction in a magnetic layer solely by applying a current through the material \cite{Myers1999,Sun1999,Katine2000}. This magnetization switching could for example be achieved by a current induced motion of magnetic domain walls \cite{Yamanouchi2004,Yamaguchi2004,Saitoh2004,Yamanouchi2006}. 
+Since it was shown theoretically by Berger \cite{Berger1978,Berger1984,Berger1992,Berger1996} and Slonczewski \cite{Slonczewski1996} that a spin-polarized current could exert a torque on the magnetization in magnetic materials, there has been a lot of focus on electrical control of magnetization dynamics. Through the spin-transfer torque mechanism one was able to switch the magnetization direction in a magnetic layer solely by applying a current through the material \cite{Myers1999,Sun1999,Katine2000}. This magnetization switching could for example be achieved by a current induced motion of magnetic domain walls \cite{Yamanouchi2004,Yamaguchi2004,Saitoh2004,Yamanouchi2006}. 
 
-It has been shown that skyrmions can also be moved by applying a current, and they can be moved by a much weaker current than magnetic domain walls \cite{Jonietz2010,Yu2012}, which is the reason for the new interest in them. Recently it has also been shown that the motion of skyrmions can also be guided through the means of electric fields \cite{Upadhyaya2015}. It has also been discovered that through the help of constricted geometries and electrical currents, we can create skyrmions in chiral magnets \cite{Iwasaki2013,Sampaio2013,Jiang2015}. In addition we are able to detect skyrmions with an unpolarized current \cite{Monchesky2015}. These new developments will greatly help us in utilizing magnetic skyrmions in memory applications, such as racetracks. 
+It has been shown that skyrmions can also be moved by applying a current, and they can be moved by a much weaker current than magnetic domain walls \cite{Jonietz2010,Yu2012}, which is the reason for the new interest in them. Recently it has also been shown that the motion of skyrmions can also be guided through the means of electric fields \cite{Upadhyaya2015}. It has also been discovered that through the help of constricted geometries and electrical currents, we can create skyrmions in chiral magnets \cite{Iwasaki2013,Sampaio2013,Jiang2015}. In addition we are able to detect skyrmions with an unpolarized current \cite{Monchesky2015}. Very recently the ability to generate and control the motion of skyrmions in racetracks has been demonstrated \cite{Woo2016}. These new developments will greatly help us in utilizing magnetic skyrmions in memory applications. 
 
 The goal of this chapter is to study the equations of motion for the skyrmion, both analytically and numerically, so that we can see how we can steer the motion of the skyrmion in the direction we want. We will consider the motion due to an inhomogeneous electric field and an electric current, which will cause the magnetization to experience Rashba fields due to the broken inversion symmetry. An understanding of how we can control the motion of skyrmions by electrical means will be very useful in regards to how we can utilize skyrmions in memory applications.
 \section{Skyrmion velocity}
-The extended LLG equation that includes Rashba spin-orbit coupling and spin-transfer torques is given by
+The extended LLG equation that includes Rashba spin--orbit coupling and spin-transfer torques is given by
 \begin{align}
-\nonumber \frac{\partial \mathbold{M}}{\partial t} &= -\gamma'\mathbold{M}\times(\mathbold{H}_{\text{eff}}+\mathbold{H}_R-\frac{\beta}{M_s} \mathbold{M}\times\mathbold{H}_R) \\
-&\hspace{4.5mm}+\frac{\alpha}{M_s}\mathbold{M}\times\frac{\partial\mathbold{M}}{\partial t} + b_J (\mathbold{\hat{j}}_e\cdot\mathbold{\nabla})\mathbold{M} - \frac{\beta b_J}{M_s} \mathbold{M}\times(\mathbold{\hat{j}}_e\cdot\mathbold{\nabla})\mathbold{M}, 
+\nonumber \partial_t \mathbold{M} &= -\gamma'\mathbold{M}\times(\mathbold{H}_{\text{eff}}+\mathbold{H}_{\text{R}}-\frac{\beta}{M_s} \mathbold{M}\times\mathbold{H}_{\text{R}}) \\
+&\hspace{4.5mm}+\frac{\alpha}{M_s}\mathbold{M}\times\partial_t \mathbold{M} + b_J (\mathbold{\hat{j}}_e\cdot\mathbold{\nabla})\mathbold{M} - \frac{\beta b_J}{M_s} \mathbold{M}\times(\mathbold{\hat{j}}_e\cdot\mathbold{\nabla})\mathbold{M}, 
 \label{eq:LLG_EC}
 \end{align}
-with the Rashba field $\mathbold{H}_R$ being given by
+with the Rashba field $\mathbold{H}_{\text{R}}$ being given by
 \begin{align}
-\mathbold{H}_R = \frac{\alpha_R m_e}{\hbar \mu_0\mu_B}b_J (\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e) = C_R b_J (\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e)
+\mathbold{H}_{\text{R}} = \frac{\alpha_{\text{R}} m_e}{\hbar \mu_0\mu_B}b_J (\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e) = C_{\text{R}} b_J (\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e)
 \end{align}
 and $b_J$ being a characteristic velocity
 \begin{align}
     b_J = \frac{1}{1+\beta^2}\frac{\mu_B P j}{e M_s}.
 \end{align}
-This result was derived by Kim et al. in \cite{Kim2012} in a manner similar to the approach in Section \ref{sec:GeneralSTT}, where the Rashba Hamiltonian \eqref{eq:RashbaH} was included in the derivation with the s-d Hamiltonian. We now want to find this equation in the Thiele formalism, as it then goes from being a partial differential equation to being an algebraic equation in the velocity components. The terms involving the Rashba field $\mathbold{H}_R$ act as a magnetic field in the LLG equation, and we can therefore use the definition of the force from a magnetic field that is not aligned with the effective field in the Thiele equation as given by \eqref{eq:ThieleF}:
+The modified gyromagnetic ratio $\gamma'$ is slightly perturbated with respect to $\gamma$, but this perturbation is so small that for all essential purposes we will assume $\gamma'\approx\gamma$.
+This result was derived by Kim \etal~in \cite{Kim2012} in a manner similar to the approach in Section \ref{sec:GeneralSTT}, where the Rashba Hamiltonian \eqref{eq:RashbaH} was included in the derivation with the $s$-$d$ Hamiltonian. We now want to find this equation in the Thiele formalism, as it then goes from being a partial differential equation to being an algebraic equation in the velocity components. The terms involving the Rashba field $\mathbold{H}_{\text{R}}$ act as a magnetic field in the LLG equation, and we can therefore use the definition of the force from a magnetic field that is not aligned with the effective field in the Thiele equation as given by \eqref{eq:ThieleF}:
 \begin{align}
-\mathbold{F}_R &= -\mu_0\int \d V\sum_k (\mathbold{\nabla}M_k)\left[\mathbold{H}_R - \frac{\beta}{M_s}\mathbold{M}\times\mathbold{H}_R\right]_k.
+\mathbold{F}_{\text{R}} &= -\mu_0\int \d V\sum_k (\mathbold{\nabla}M_k)\left[\mathbold{H}_{\text{R}} - \frac{\beta}{M_s}\mathbold{M}\times\mathbold{H}_{\text{R}}\right]_k.
 \end{align}
 This expression is calculated in Appendix \ref{app:F_RashbaThiele} and is found to be
 \begin{align}
-\mathbold{F}_R = -\mu_0 \pi\beta C_R b_J M_s d \int_0^{\infty} \d r \left(\frac{\partial \theta}{\partial r} r + \sin\theta\cos\theta \right) \mathbold{\hat{x}}
+\mathbold{F}_{\text{R}} = -\mu_0 \pi\beta C_{\text{R}} b_J M_s d \int_0^{\infty} \d r \left(\frac{\partial \theta}{\partial r} r + \sin\theta\cos\theta \right) \mathbold{\hat{x}}
 \end{align}
 for a hedgehog skyrmion with $\psi = 0$ and $\theta(r=0)=\pi, \theta(r=\infty)=0$. We have assumed that the direction of the current is $\mathbold{\hat{j}}_e = \mathbold{\hat{x}}$. We will only consider these choices for the remainder of this chapter. This is reasonable, as for our particular choice of geometry with thin films (which is necessary to get a significant contribution from the electric field control) hedgehog skyrmions have the lowest energy due to interfacial DMI. We are also free to define the direction along the current to be the $x$-direction.
 
-We now have the force resulting from Rashba spin-orbit coupling, the next step is then to find the force from an inhomogenous electric field. If we consider an electric field with a constant gradient, the field can then be written in cartesian and skyrmion coordinates as
+We now have the force resulting from Rashba spin--orbit coupling, the next step is then to find the force from an inhomogenous electric field. If we consider an electric field with a constant gradient, the field can then be written in cartesian and skyrmion coordinates as
 \begin{subequations}
 \begin{align}
 E(\mathbold{r}) &= E_x x + E_y y \\
@@ -38,24 +39,24 @@ E(\mathbold{r}) &= E_x x + E_y y \\
 \end{subequations}
 with $\left( x_0,y_0\right)$ indicating the location of the skyrmion core. If we integrate this energy density over the entire film, we then find that the total energy contribution from the electric field becomes
 \begin{align}
-\nonumber U_{EF} &= \int \d V \epsilon_{EF} \\
+\nonumber U_{\text{EF}} &= \int \d V \epsilon_{\text{EF}} \\
 \nonumber &= \eta \int_0^d \d z \int_0^{2\pi}\d \phi \int_0^{\infty}\d r\left( E_x x_0 + E_y y_0 + E_x r \cos\phi + E_y r \sin\phi \right) r \sin^2\theta \\
 &= 2\pi\eta d\left(E_x x_0 + E_y y_0\right)\int_0^{\infty}\d r r \sin^2\theta.
 \end{align}
 Remembering that a gradient of the free micromagnetic energy will result in a force in the Thiele equation, as described by \eqref{eq:ThieleF}, we can write the force resulting from the inhomogenous electric field as
 \begin{align}
-\nonumber\mathbold{F}_E &= -\mathbold{\nabla}U_{EF} \\
+\nonumber\mathbold{F}_{\text{E}} &= -\mathbold{\nabla}U_{\text{EF}} \\
 &= -2\pi \eta d \left(E_x \mathbold{\hat{x}} + E_y \mathbold{\hat{y}}\right) \int_0^{\infty}\d r r \sin^2\theta.
 \end{align}
-The final equation in the Thiele formalism for our model can then be written as
+We note that the $\mathbold{\nabla}$ operator does not act on the integral, as this is independent of the position of the skyrmion core and is therefore just a constant. The final equation in the Thiele formalism for our model can then be written as
 \begin{align}
-\mathbold{F}_R+\mathbold{F}_E + \mathbold{G} \times\left(\mathbold{v}+b_J\mathbold{\hat{j}}_e\right) + D\left(\alpha\mathbold{v}+\beta b_J \mathbold{\hat{j}}_e\right) = 0,
+\mathbold{F}_{\text{R}}+\mathbold{F}_{\text{E}} + \mathbold{G} \times\left(\mathbold{v}+b_J\mathbold{\hat{j}}_e\right) - D\left(\alpha\mathbold{v}+\beta b_J \mathbold{\hat{j}}_e\right) = 0,
 \end{align}
 where we remember the definitions of the gyrovector $\mathbold{G}$ and dissipation factor $D$ to be
 \begin{subequations}
 \begin{align}
 \mathbold{G} &= \frac{2\pi M_s\mu_0 d}{\gamma'}\left[\cos\theta\right]_{\theta(r=0)}^{\theta(r=\infty)} \mathbold{\hat{z}}\\
-D &= - \frac{\pi M_s \mu_0 d}{\gamma '} \int_0^{\infty} \d r \left(r\left(\frac{\partial \theta}{\partial r}\right)^2+\frac{\sin^2\theta}{r}\right).
+D &= \frac{\pi M_s \mu_0 d}{\gamma '} \int_0^{\infty} \d r \left(r\left(\frac{\partial \theta}{\partial r}\right)^2+\frac{\sin^2\theta}{r}\right).
 \end{align}
 \end{subequations}
 If we divide this equation by the length of $\mathbold{G}$, the non-trivial equations we end up with are
@@ -71,11 +72,11 @@ where we have made the following definitions:
 \begin{align}
 \alpha_C &= \frac{\alpha}{4} \int_0^{\infty} \d r \left(r\left(\frac{\partial \theta}{\partial r}\right)^2+\frac{\sin^2\theta}{r}\right), \\
 \beta_C &=\frac{\beta}{4} \int_0^{\infty} \d r \left(r\left(\frac{\partial \theta}{\partial r}\right)^2+\frac{\sin^2\theta}{r}\right), \\
-R &= \frac{\gamma'\beta C_R}{4} \int_0^{\infty} \d r \left(\frac{\partial \theta}{\partial r} r + \sin\theta\cos\theta \right), \label{eq:Rconst}\\
+R &= \frac{\gamma'\beta C_{\text{R}}}{4} \int_0^{\infty} \d r \left(\frac{\partial \theta}{\partial r} r + \sin\theta\cos\theta \right), \label{eq:Rconst}\\
 C_E &= \frac{\gamma' \eta}{2\mu_0 M_s}\int_0^{\infty}\d r r\sin^2\theta.
 \end{align}
 \end{subequations}
-Solving the equations in \eqref{eq:EquationsMotionElectricControl} for $\dot{x}_0$ and $\dot{y}_0$ one finally ends up with the velocity components of the motion of a skyrmion under the influence of spin-transfer torque, Rashba spin-orbit coupling and an inhomogenous electric field:
+Solving the equations in \eqref{eq:EquationsMotionElectricControl} for $\dot{x}_0$ and $\dot{y}_0$ one finally ends up with the velocity components of the motion of a skyrmion under the influence of spin-transfer torque, Rashba spin--orbit coupling and an inhomogenous electric field:
 \begin{subequations}
 \label{eq:ElectricalSkyrmionVComponents}
 \begin{align}
@@ -83,11 +84,11 @@ Solving the equations in \eqref{eq:EquationsMotionElectricControl} for $\dot{x}_
 \dot{y}_0 &= \frac{\alpha_C-(\beta_C + R)}{\alpha_C^2+1}b_J - \frac{C_E}{\alpha_C^2+1}E_x - \frac{\alpha_C C_E}{\alpha_C^2+1}E_y.
 \end{align}
 \end{subequations}
-From this result we can see the effects of RSOC and an electric field gradient on the velocity of the skyrmion center of mass. The RSOC has the same impact on the motion as the non-adiabatic STT, and appears as a correction to $\beta_C$ in the equations of motion. Note that only the term proportional to $\beta\mathbold{M}\times\mathbold{H}_R$ has an impact on the skyrmion dynamics, as a constant magnetic field like $\mathbold{H}$ can not induce a rigid motion of the skyrmion because there is no energy gain for it to move elsewhere. The constant field $\mathbold{H}_R$ can, however, induce a deformation of the skyrmion. For example, a constant external magnetic field pointing along the $z$-direction perpendicular to the skyrmion plane has an effect on the skyrmion size, much like magnetic anisotropy. If this external field is alternating, the field can cause the skyrmion size to shrink and increase periodically \cite{Mochizuki2012}, and in nanodots it can even be used to switch the magnetization of the core \cite{Zhang2015}. In our case the magnetic field experienced due to the Rashba effect lies in the skyrmion plane, and one would therefore expect it to have other deformation modes than a field pointing perpendicular to the skyrmion plane. To understand the effect of the non-uniform Rashba field proportional to $\beta\mathbold{M}\times\mathbold{H}_R$ we can compare it to the adiabatic STT in \eqref{eq:STT_Adiabatic_Macro}. The term in the LLG equation can be written as $\gamma\beta\mathbold{M}\times(\mathbold{M}\times\mathbold{H}_R)/M_s = -(\gamma\beta C_R b_J/M_s)\mathbold{M}\times(\mathbold{\hat{H}}_R\times\mathbold{M})$. This is very similar to the adiabatic STT acting on a magnetization $\mathbold{M}_j$ from a current that was polarized by passing through a magnetization $\mathbold{M}_i$. This torque was proportional to $-\mathbold{M}_j\times(\mathbold{M}_i\times\mathbold{M}_j)$. With the exception of the different torque magnitudes, the only difference is that the polarizing magnetic layer $\mathbold{M}_i$ is replaced by the Rashba field $\mathbold{H}_R$. This torque then originates from the conduction electrons that are polarized in the direction of the Rashba field. The direction of this field is given by $\mathbold{\hat{H}}_R=\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e$. When the current is passing in the $x$-direction as we have considered so far, this field points in the $y$-direction. As this is generates a component of the spin polarization of the current that can be perpendicular to the local magnetization, it would explain why the torque behaves as the non-adiabatic STT. We now compare the driving torque resulting from RSOC more closely to the non-adiabatic STT. The driving torque from RSOC can be written as
+From this result we can see the effects of RSOC and an electric field gradient on the velocity of the skyrmion center of mass. The RSOC has the same impact on the motion as the non-adiabatic STT, and appears as a correction to $\beta_C$ in the equations of motion. Note that only the term proportional to $\beta\mathbold{M}\times\mathbold{H}_{\text{R}}$ has an impact on the skyrmion dynamics, as a constant magnetic field like $\mathbold{H}$ can not induce a rigid motion of the skyrmion because there is no energy gain for it to move elsewhere. The constant field $\mathbold{H}_{\text{R}}$ can, however, induce a deformation of the skyrmion. For example, a constant external magnetic field pointing along the $z$-direction perpendicular to the skyrmion plane has an effect on the skyrmion size, much like magnetic anisotropy. If this external field is alternating, the field can cause the skyrmion size to shrink and increase periodically \cite{Mochizuki2012}, and in nanodots it can even be used to switch the magnetization of the core \cite{Zhang2015}. In our case the magnetic field experienced due to the Rashba effect lies in the skyrmion plane, and one would therefore expect it to have other deformation modes than a field pointing perpendicular to the skyrmion plane. To understand the effect of the non-uniform Rashba field proportional to $\beta\mathbold{M}\times\mathbold{H}_{\text{R}}$ we can compare it to the adiabatic STT in \eqref{eq:STT_Adiabatic_Macro}. The term in the LLG equation can be written as $\gamma\beta\mathbold{M}\times(\mathbold{M}\times\mathbold{H}_{\text{R}})/M_s = -(\gamma\beta C_{\text{R}} b_J/M_s)\mathbold{M}\times(\mathbold{\hat{H}}_{\text{R}}\times\mathbold{M})$. This is very similar to the adiabatic STT acting on a magnetization $\mathbold{M}_j$ from a current that was polarized by passing through a magnetization $\mathbold{M}_i$. This torque was proportional to $-\mathbold{M}_j\times(\mathbold{M}_i\times\mathbold{M}_j)$. With the exception of the different torque magnitudes, the only difference is that the polarizing magnetic layer $\mathbold{M}_i$ is replaced by the Rashba field $\mathbold{H}_{\text{R}}$. This torque then originates from the conduction electrons that are polarized in the direction of the Rashba field. The direction of this field is given by $\mathbold{\hat{H}}_{\text{R}}=\mathbold{\hat{z}}\times\mathbold{\hat{j}}_e$. When the current is passing in the $x$-direction as we have considered so far, this field points in the $y$-direction. As this is generates a component of the spin polarization of the current that can be perpendicular to the local magnetization, it would explain why the torque behaves as the non-adiabatic STT. We now compare the driving torque resulting from RSOC more closely to the non-adiabatic STT. The driving torque from RSOC can be written as
 \begin{align}
-    \nonumber \gamma\beta\mathbold{m}\times\left(\mathbold{M}\times\mathbold{H}_R\right) &= \gamma\beta M_s\left(\left(\mathbold{m}\cdot\mathbold{H}_R\right)\mathbold{m}-\mathbold{H}_R\right) \\
+    \nonumber \gamma\beta\mathbold{m}\times\left(\mathbold{M}\times\mathbold{H}_{\text{R}}\right) &= \gamma\beta M_s\left(\left(\mathbold{m}\cdot\mathbold{H}_{\text{R}}\right)\mathbold{m}-\mathbold{H}_{\text{R}}\right) \\
     &=     
-    \gamma\beta M_s C_R b_J
+    \gamma\beta M_s C_{\text{R}} b_J
     \begin{pmatrix}
      \sin^2\theta\sin\Phi\cos\Phi \\
      \sin^2\theta\sin^2\Phi-1 \\
@@ -117,10 +118,10 @@ The electric field gradient introduces new terms to the velocity of the skyrmion
 \node at (177pt,15pt) {\textcolor{white}{\Large{$t = t_1$}}};
 \node at (294pt,15pt) {\textcolor{white}{\Large{$t = t_2$}}};
 \node at (411pt,15pt) {\textcolor{white}{\Large{$t = t_3$}}};
-\node at (40pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_E$}}};
-\node at (155pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_E$}}};
-\node at (270pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_E$}}};
-\node at (385pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_E$}}};
+\node at (40pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_{\text{E}}$}}};
+\node at (155pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_{\text{E}}$}}};
+\node at (270pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_{\text{E}}$}}};
+\node at (385pt,120pt) {\textcolor{white}{\Large{$\mathbold{F}_{\text{E}}$}}};
 \node at (60pt,60pt) {\textcolor{white}{\Large{$\mathbold{v}=0$}}};
 \node at (175pt,60pt) {\textcolor{white}{\Large{$\mathbold{v}$}}};
 \node at (290pt,60pt) {\textcolor{white}{\Large{$\mathbold{v}$}}};
@@ -169,12 +170,12 @@ Here the solution of $\theta$ inside the integrals is given in the dimensionless
 \end{figure}
 
 \section{Pinning, threshold currents and field gradients}
-As with domain walls, there is also a threshold current or field that is necessary for skyrmions to start moving, even though our previous results do not reflect this. In the case of skyrmions this threshold current is much weaker than the case of domain walls \cite{Jonietz2010}. The reason for this reluctance to move is pinning centers, which have much less impact on the motion of skyrmions than that of domain walls, but have an impact nonetheless. To model the effect of pinning centers on skyrmion motions at low current densities or weak electric fields, one can introduce a pinning force in the Thiele equation \eqref{eq:Thiele}. The equation of interest then becomes
+As with domain walls, there is also a threshold current or field that is necessary for skyrmions to start moving, even though our previous results do not reflect this. In the case of skyrmions this threshold current is much weaker than the case of domain walls \cite{Jonietz2010}. The reason for this reluctance to move is pinning centers, but for the motion of domain walls there is also an intrinsic pinning in the absence of pinning centers \cite{Koyama2011}. It is thought that the low threshold current for skyrmion motion can partially be attributed to the Magnus force \cite{Iwasaki2013}, which is an additional diving force that is not present for domain walls. In addition to having a lower pinning force, skyrmions are also reluctant to be pinned when driven by large enough currents, as the Magnus force and the flexible deformation of the skyrmion enables it to move around the pinning centers \cite{Iwasaki2013}. To model the effect of pinning centers on skyrmion motions at low current densities or weak electric fields, one can introduce a pinning force in the Thiele equation \eqref{eq:Thiele}. The equation of interest then becomes
 \begin{align}
 \label{eq:PinningThiele}
-\mathbold{F}_{\textrm{pin}}+\mathbold{F}_R+\mathbold{F}_E + \mathbold{G} \times\left(\mathbold{v}+b_J\mathbold{\hat{j}}_e\right) + D\left(\alpha\mathbold{v}+\beta b_J \mathbold{\hat{j}}_e\right) = 0.
+\mathbold{F}_{\textrm{pin}}+\mathbold{F}_{\text{R}}+\mathbold{F}_{\text{E}} + \mathbold{G} \times\left(\mathbold{v}+b_J\mathbold{\hat{j}}_e\right) - D\left(\alpha\mathbold{v}+\beta b_J \mathbold{\hat{j}}_e\right) = 0.
 \end{align}
-The phenemenological pinning force $\mathbold{F}_{\textrm{pin}}$ is usually written as \cite{Everschor2012, IwasakiNagaosa2013}.
+The phenemenological pinning force $\mathbold{F}_{\textrm{pin}}$ is conventionally written as \cite{Everschor2012, IwasakiNagaosa2013}
 \begin{align}
 \mathbold{F}_{\textrm{pin}} = -4\pi v_{\textrm{pin}} f(\frac{v}{v_{\textrm{pin}}}) \frac{\mathbold{v}}{v},
 \end{align}
@@ -192,11 +193,11 @@ where the forces are normalized in a way so that the gyrovector $\mathbold{G} = 
 b_J + \dot{x}_0 - \alpha_C\dot{y}_0 - v_{\textrm{pin}}\frac{\dot{y}_0}{v} + F_y &= 0,
 \end{align}
 \end{subequations}
-where $F_x$ and $F_y$ are the $x-$ and $y-$ components of the total force $\mathbold{F}_R + \mathbold{F}_E$ resulting from Rashba spin-orbit coupling and voltage induced magnetic anisotropy respectively. In the case of $F_x = F_y = 0$, one can see that if one makes the substitution
+where $F_x$ and $F_y$ are the $x$- and $y$-components of the total force $\mathbold{F}_{\text{R}} + \mathbold{F}_{\text{E}}$ resulting from Rashba spin--orbit coupling and voltage induced magnetic anisotropy respectively. In the case of $F_x = F_y = 0$, one can see that if one makes the substitution
 \begin{align}
 \alpha_C \rightarrow \alpha_C+\frac{v_{\textrm{pin}}}{v}
 \end{align}
-the equations of motion are exactly the same as for the case of the motion of a skyrmion due to a spin-polarized current. The solutions of $\dot{x}_0$ and $\dot{y}_0$ are known in this case, and one can therefore make the substitution of $\alpha_C$ above into these solutions to get the solutions in the presence of pinning:
+the equations of motion are exactly the same as for the case of the motion of a skyrmion due to a spin-polarized current in \eqref{eq:EquationsMotionElectricControl}. The solutions of $\dot{x}_0$ and $\dot{y}_0$ are known in this case, and one can therefore make the substitution of $\alpha_C$ above into these solutions to get the solutions in the presence of pinning:
 \begin{subequations}
 \begin{align}
 \dot{x}_0 &= -\frac{1+(\alpha_C+\frac{v_{\textrm{pin}}}{v})\beta_C}{(\alpha_C+\frac{v_{\textrm{pin}}}{v})^2+1}b_J, \\
@@ -215,9 +216,9 @@ The solution to this equation is given by
 \begin{align}
 v = \frac{\sqrt{(\alpha_Cv_{\textrm{pin}})^2+(\alpha_C^2+1)\left[(\beta_C^2+1)b_J^2-v_{\textrm{pin}}^2\right]}-\alpha_Cv_{\textrm{pin}}}{\alpha_C^2+1},
 \end{align}
-where the positive solution has been chosen as that is the only solution that can give a positive $v$. This solution in $v$ differs from the solution given by Iwasaki et al. \cite{IwasakiNagaosa2013} by the term outside of the square root, but the solutions of $\dot{x}_0$ and $\dot{y}_0$ are in agreement. As our solution of $v$ is consistent with our solutions of $\dot{x}_0$ and $\dot{y}_0$, and if one plugs our solutions into the equations in \eqref{eq:PinningThieleComponents} they are satisfied in the case $F_x = F_y = 0$, it is concluded that our solutions are correct. 
+where the positive solution has been chosen as that is the only solution that can give a positive $v$. This solution in $v$ differs from the solution given by Iwasaki \etal~\cite{IwasakiNagaosa2013} by the term outside of the square root, but the solutions of $\dot{x}_0$ and $\dot{y}_0$ are in agreement. As our solution of $v$ is consistent with our solutions of $\dot{x}_0$ and $\dot{y}_0$, and if one plugs our solutions into the equations in \eqref{eq:PinningThieleComponents} they are satisfied in the case $F_x = F_y = 0$, it is concluded that our solutions are correct. 
 
-So far we have only discussed pinning of the spin-polarized current driven skyrmion motion, but it is also of interest to find the same results in the presence of Rashba spin-orbit coupling and an imhomogenous electric field perpendicular to the film. In other words, we must solve \eqref{eq:PinningThieleComponents} when $F_x \neq 0$ and $F_y \neq 0$. We apply the same trick again where we try to incorporate $F_x$ and $F_y$ into similar variables in the equations we already have a solution for. $F_x$ and $F_y$ are both independent of $\dot{x}_0$, $\dot{y}_0$ and $v$, we must therefore try to include them in other terms also independent of these variables. In \eqref{eq:PinningThieleA} the only term independent of these is $-\beta_Cb_J$, and in \eqref{eq:PinningThieleB} the term is $b_J$. If we define new variables $\tilde{\beta}_C$ and $\tilde{b}_J$ that satisfy
+So far we have only discussed pinning of the spin-polarized current driven skyrmion motion, but it is also of interest to find the same results in the presence of Rashba spin--orbit coupling and an imhomogenous electric field perpendicular to the film. In other words, we must solve \eqref{eq:PinningThieleComponents} when $F_x \neq 0$ and $F_y \neq 0$. We apply the same trick again where we try to incorporate $F_x$ and $F_y$ into similar variables in the equations we already have a solution for. $F_x$ and $F_y$ are both independent of $\dot{x}_0$, $\dot{y}_0$ and $v$, we must therefore try to include them in other terms also independent of these variables. In \eqref{eq:PinningThieleA} the only term independent of these is $-\beta_Cb_J$, and in \eqref{eq:PinningThieleB} the term is $b_J$. If we define new variables $\tilde{\beta}_C$ and $\tilde{b}_J$ that satisfy
 \begin{subequations}
 \begin{align}
 -\tilde{\beta}_C\tilde{b}_J &= -\beta_Cb_J + F_x, \\
@@ -231,7 +232,7 @@ meaning they have the following definitions:
 \tilde{b}_J &= b_J + F_y,
 \end{align}
 \end{subequations}
-the equations have the same form as before with $\beta_C \rightarrow \tilde{\beta}_C$ and $b_J \rightarrow \tilde{b}_J$. The total force components resulting from $\mathbold{F}_R+\mathbold{F}_E$ are
+the equations have the same form as before with $\beta_C \rightarrow \tilde{\beta}_C$ and $b_J \rightarrow \tilde{b}_J$. The total force components resulting from $\mathbold{F}_{\text{R}}+\mathbold{F}_{\text{E}}$ are
 \begin{subequations}
 \begin{align}
 F_x &= -C_E E_x - Rb_J, \\
@@ -252,7 +253,7 @@ It can be seen that in the limit of no pinning ($v_{\textrm{pin}} \rightarrow 0$
 \begin{align}
 b_J^{\textrm{(crit)}} = \frac{1}{1+\beta^2} \frac{\mu_BP}{eM_s}j_e^{\textrm{(crit)}}= \frac{v_{\textrm{pin}}}{\sqrt{(\beta_C+R)^2+1}}.
 \end{align}
-In the field driven case where the skyrmion motion is solely driven by an inhomogenous electric field applied perpendicular to the film, one finds that the skyrmion moves when the field gradient $E_g = \sqrt{E_x^2+E_y^2}$ is greater than some critical value
+To determine the strength of the Rashba parameter $\alpha_{\text{R}}$ we use the relation in \eqref{eq:DalphaR}, which gives $\alpha_{\text{R}}$ in terms of the strength of the DMI and exchange interaction. In the field driven case where the skyrmion motion is solely driven by an inhomogenous electric field applied perpendicular to the film, one finds that the skyrmion moves when the field gradient magnitude $E_g = \sqrt{E_x^2+E_y^2}$ is greater than some critical value
 \begin{align}
 E_g^{\textrm{(crit)}} = \frac{v_{\textrm{pin}}}{C_E}.
 \end{align}
@@ -290,7 +291,7 @@ Here $\mathbold{m}$ and $\mathbold{f}$ are vectors of length $N$, $\bar{d}$ and 
 \mathbold{f} &= 
  \begin{pmatrix}
   b_J\partial_x m_x - \beta b_J(m_y\partial_xm_z - m_z\partial_xm_y) + 2(m_y\partial_xm_x+m_y\partial_ym_y+m_z\partial_ym_z)\gamma D/(\mu_0M_s)\\
-  b_J\partial_x m_y - \beta b_J(m_z\partial_xm_x-m_x\partial_xm_z)-2(m_z\partial_xm_z+m_x\partial_xm_x+m_x\partial_ym_y) \gamma D/(\mu_0M_s) -\beta H_R\\
+  b_J\partial_x m_y - \beta b_J(m_z\partial_xm_x-m_x\partial_xm_z)-2(m_z\partial_xm_z+m_x\partial_xm_x+m_x\partial_ym_y) \gamma D/(\mu_0M_s) -\beta H_{\text{R}}\\
   b_J\partial_xm_z - \beta b_J(m_x\partial_xm_y-m_y\partial_xm_x) - 2(m_x\partial_ym_z-m_y\partial_xm_z)\gamma D/(\mu_0M_s)
  \end{pmatrix}, \\
 \bar{d} &= 
@@ -301,9 +302,9 @@ Here $\mathbold{m}$ and $\mathbold{f}$ are vectors of length $N$, $\bar{d}$ and 
  \end{pmatrix}, \\
  \bar{a} &= 
  \begin{pmatrix}
-  -\gamma \beta H_R m_y & 2\gamma (K+\eta E) m_z/(\mu_0M_s) & -\gamma H_R \\
-  -2\gamma (K+\eta E) m_z/(\mu_0M_s) & -\gamma\beta H_R m_y & 0 \\
-  \gamma H_R & 0  & -\gamma \beta H_R m_y
+  -\gamma \beta H_{\text{R}} m_y & 2\gamma (K+\eta E) m_z/(\mu_0M_s) & -\gamma H_{\text{R}} \\
+  -2\gamma (K+\eta E) m_z/(\mu_0M_s) & -\gamma\beta H_{\text{R}} m_y & 0 \\
+  \gamma H_{\text{R}} & 0  & -\gamma \beta H_{\text{R}} m_y
  \end{pmatrix}, \\
   \mathbold{\bar{c}} &= 
  \begin{pmatrix}
@@ -318,7 +319,7 @@ with $\bar{0}$ being a $2\times 2$ matrix of zeros, and $\bar{I}$ the two-dimens
     \left[\nabla\cdot(\mathbold{\bar{c}}\otimes\nabla \mathbold{m})\right]_i = \sum_{j=1}^{N}\left(\partial_xc_{i,j,1,1}\partial_x+\partial_xc_{i,j,1,2}\partial_y+\partial_yc_{i,j,2,1}\partial_x+\partial_yc_{i,j,2,2}\partial_y\right) m_j.
 \end{align}
 \subsection{Dimensional analysis}
-When performing the numerical simulations it is necessary to do this using dimensionless quantities. We therefore need to define a unit length- and time-scale for the system based on our parameters. For the unit length-scale we continue to use the one defined in the numerical solution of the skyrmion profile in Section \ref{sec:Skyrmions}, which was $\tilde{r} = rD/A$. The unit length scale is therefore $\underline{r}=A/D$. For the time-scale of the system we choose one such that $\underline{t}\gamma K/\mu_0 M_s = 1$, in other words $\underline{t}=\mu_0 M_s/\gamma K$. We now use these definitions to find the scalings of the remaining parameters. The parameter $b_J$ is a velocity factor, and when its dimensionless counterpart is unity it takes on the value $\underline{r}/\underline{t} = \gamma A K/D\mu_0 M_s$. Moving on to the effective field terms from the DMI and exchange interaction, we need to consider spatial derivatives. These derivatives needs to be done in a dimensionless space. We can then see from the chain rule that $\partial_x = \underline{r}^{-1}\partial_{\tilde{x}}$. Each derivative will then carry with it a factor $D/A$ for the derivative to be done in dimensionless coordinates. We then note that the effective field originating from DMI has one spatial derivative, while the effective field originating from the exchange interaction has a double spatial derivative. As $A(D/A)^2 = D (D/A) = K/C$ these fields scale similarly in our dimensionless space. Since we have defined $\underline{t}\gamma K/\mu_0 M_s = 1$, we simply divide these effective fields by the factor $C = AK/D^2$ to get the right scaling. Lastly we consider the scaling of the Rashba field $H_R$. Due to the definition of the time-scale we must require that the dimensionless value of $\gamma H_R$ to be unity when $H_R = K/\mu_0 M_s$, which is the measure of field strength chosen in our simulations. A summary of the dimensional scalings is shown in Table \ref{tab:DimAnalysis}.
+When performing the numerical simulations it is necessary to do this using dimensionless quantities. We therefore need to define a unit length- and time-scale for the system based on our parameters. For the unit length-scale we continue to use the one defined in the numerical solution of the skyrmion profile in Section \ref{sec:Skyrmions}, which was $\tilde{r} = rD/A$. The unit length scale is therefore $\underline{r}=A/D$. For the time-scale of the system we choose one such that $\underline{t}\gamma K/\mu_0 M_s = 1$, in other words $\underline{t}=\mu_0 M_s/\gamma K$. We now use these definitions to find the scalings of the remaining parameters. The parameter $b_J$ is a velocity factor, and when its dimensionless counterpart is unity it takes on the value $\underline{r}/\underline{t} = \gamma A K/D\mu_0 M_s$. Moving on to the effective field terms from the DMI and exchange interaction, we need to consider spatial derivatives. These derivatives needs to be done in a dimensionless space. We can then see from the chain rule that $\partial_x = \underline{r}^{-1}\partial_{\tilde{x}}$. Each derivative will then carry with it a factor $D/A$ for the derivative to be done in dimensionless coordinates. We then note that the effective field originating from DMI has one spatial derivative, while the effective field originating from the exchange interaction has a double spatial derivative. As $A(D/A)^2 = D (D/A) = K/C$ these fields scale similarly in our dimensionless space. Since we have defined $\underline{t}\gamma K/\mu_0 M_s = 1$, we simply divide these effective fields by the factor $C = AK/D^2$ to get the right scaling. Lastly we consider the scaling of the Rashba field $H_{\text{R}}$. Due to the definition of the time-scale we must require that the dimensionless value of $\gamma H_{\text{R}}$ to be unity when $H_{\text{R}} = K/\mu_0 M_s$, which is the measure of field strength chosen in our simulations. A summary of the dimensional scalings is shown in Table \ref{tab:DimAnalysis}.
 \begin{table}[h]
 \begin{center}
   \caption{List of dimensionless quantities utilized in the numerical simulation and the scaling factor to get the correct unit and magnitude of the physical quantity.}
@@ -328,7 +329,7 @@ When performing the numerical simulations it is necessary to do this using dimen
     $t$ & s & $\mu_0M_s/\gamma K$ \\
     $r$ & m & $A/D$ \\
     $b_J$ & m/s & $\gamma K A/\mu_0 M_s D$ \\
-    $H_R$ & A/m & $K/\mu_0 M_s$ \\
+    $H_{\text{R}}$ & A/m & $K/\mu_0 M_s$ \\
     $D\partial_{\tilde{x}}$ & J/m$^3$ & $D^2/A$ \\
     $A\partial_{\tilde{x}}^2$ &J/m$^3$ & $D^2/A$ \\
     \hline
@@ -337,7 +338,7 @@ When performing the numerical simulations it is necessary to do this using dimen
 \end{center}
 \end{table}
 
-In Table \ref{tab:PhysicalConstants} we list some parameter values for a Ir|Co|Pt multilayer system \cite{Moreau-Luchaire2016} and 1 nm thick cobalt nanotracks \cite{ZhangEzawa2015}. The value of $\alpha_R$ is determined by using the values of $A$, $D$ and other physical constants in the relation \eqref{eq:DalphaR}. 
+In Table \ref{tab:PhysicalConstants} we list some parameter values for a Ir|Co|Pt multilayer system \cite{Moreau-Luchaire2016} and 1 nm thick cobalt nanotracks \cite{ZhangEzawa2015}. The value of $\alpha_{\text{R}}$ is determined by using the values of $A$, $D$ and other physical constants in the relation \eqref{eq:DalphaR}. 
 \begin{table}[h]
 \begin{center}
   \caption{Table of physical quantities for a Ir|Co|Pt multilayer system and 1 nm thick cobalt nanotracks.}
@@ -348,7 +349,7 @@ In Table \ref{tab:PhysicalConstants} we list some parameter values for a Ir|Co|P
     $D$ & mJ/m$^2$ & 1.75 & 4 \\
     $K$ & MJ/m$^3$ & 0.17 & 0.8 \\
     $M_s$ & MA/m & 0.96 & 0.58 \\
-    $\alpha_R$ & peV$\cdot$m & 3.3 & 5.1 \\
+    $\alpha_{\text{R}}$ & peV$\cdot$m & 3.3 & 5.1 \\
     \hline
   \end{tabular}
   \label{tab:PhysicalConstants}
@@ -356,7 +357,7 @@ In Table \ref{tab:PhysicalConstants} we list some parameter values for a Ir|Co|P
 \end{table}
 
 \subsection{Static case}
-As a test case we will first simulate the LLG equation without any driving torques or fields as given by \eqref{eq:LLG}, where we give in the skyrmion profile solved numerically as an initial state. As the magnetization of the skyrmion is parallel with the effective field, which is why the skyrmion is a stable solution, we would expect the solution to be static ($\mathbold{M}(\mathbold{r},t) = \mathbold{M}(\mathbold{r},t=0)$).
+As a test case we will first solve the LLG equation without any driving torques or fields as given by \eqref{eq:LLG}, where we give in the skyrmion profile solved numerically as an initial state. As the magnetization of the skyrmion is parallel with the effective field, which is why the skyrmion is a stable solution, we would expect the solution to be static ($\mathbold{M}(\mathbold{r},t) = \mathbold{M}(\mathbold{r},t=0)$).
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{.3\textwidth}
@@ -445,10 +446,10 @@ The results are shown in Figure \ref{fig:StaticSkyrmion}. At a time $t=\underlin
 \caption{First and second derivatives of $m_x$ and $m_z$ in the $x$-direction. Every derivative has a discontinuity at $\tilde{x}=0$ except for the first derivative of $m_z$. The second derivative of $m_x$ has a singularity at $\tilde{x}=0$.}
 \label{fig:SkyrmionDerivatives}
 \end{figure}
-As one can see, we still have an issue with discontinuities in the derivatives. For the $m_x = \sin\theta\cos\Phi$ case this could possibly stem from the $\cos\Phi$ factor, as $\Phi$ is not properly defined at $\tilde{r}=0$. As the first derivative of $m_x$ has a discontinuity while the first derivative of $m_z$ does not, and $m_z$ is independent of $\Phi$, it would back up this hypothesis. However, as $\sin\theta(\tilde{r}=0)=0$ a value for $\Phi$ at this point should not be necessary. But we also see that our fix of the $\theta$ solution cannot be without problems, as we also have a discontinuity in the second derivative of $m_z$, and this must stem from how we handle $\theta$. These discontinuities could therefore be an explanation for the instability in our numerical simulations. The most likely sinner in this hypothesis is the second derivative of $m_x$, which appears to have a singularity in its second derivative at $\tilde{r}=0$. This singularity most likely originates from the derivatives of $\Phi$, as the discontinuity in the second derivative of $m_z$ is rather small. A last possible explanation for the instability is that while the LLG equation should conserve the magnitude of $\mathbold{m}$ by default due to the form of the equation, there is no explicit constriction in the solver that requires that $m_x^2+m_y^2+m_z^2=1$. As the numerical solutions are based on approximations, if there is a small perturbation that makes $m_x^2+m_y^2+m_z^2\neq1$ the solver will not necessarily attempt to adjust the magnitude of $\mathbold{m}$ back to unity, and this perturbation can then increase until the components of $\mathbold{m}$ reach unrealistic values. From this point on the results of the simulation are of absolutely no interest, as the input to the next time step is outright wrong.
+As one can see, we still have an issue with discontinuities in the derivatives. For the $m_x = \sin\theta\cos\Phi$ case this could possibly stem from the $\cos\Phi$ factor, as $\Phi$ is not properly defined at $\tilde{r}=0$. As the first derivative of $m_x$ has a discontinuity while the first derivative of $m_z$ does not, and $m_z$ is independent of $\Phi$, it would back up this hypothesis. However, as $\sin\theta(\tilde{r}=0)=0$ a value for $\Phi$ at this point should not be necessary. But we also see that our fix of the $\theta$ solution can not be without problems, as we also have a discontinuity in the second derivative of $m_z$, and this must stem from how we handle $\theta$. These discontinuities could therefore be an explanation for the instability in our numerical simulations. The most likely sinner in this hypothesis is the second derivative of $m_x$, which appears to have a singularity at $\tilde{r}=0$. This singularity most likely originates from the derivatives of $\Phi$, as the discontinuity in the second derivative of $m_z$ is rather small. A last possible explanation for the instability is that while the LLG equation should conserve the magnitude of $\mathbold{m}$ by default due to the form of the equation, there is no explicit constriction in the solver that requires that $m_x^2+m_y^2+m_z^2=1$. As the numerical solutions are based on approximations, if there is a small perturbation that makes $m_x^2+m_y^2+m_z^2\neq1$ the solver will not necessarily attempt to adjust the magnitude of $\mathbold{m}$ back to unity, and this perturbation can then increase until the components of $\mathbold{m}$ reach unrealistic values. From this point on the results of the simulation are of absolutely no interest, as the input to the next time step is outright wrong.
 
 \subsection{Spin-transfer torque driven dynamics}
-In the previous subsection we saw that the numerical simulation proved to be unstable even in a case that should involve no dynamics. However, up to the time $t=\underline{t}$ it was more or less stable, with some deformations of the initial state that should not be present. Despite the fact that the results yielded by the simulations cannot be relied entirely upon, even up to this time, we will attempt to introduce some dynamical terms in the LLG equation and solve this to a time $t=\underline{t}$ and compare this with our analytical results. While the quantitative behavior may be too inaccurate for us to judge if the numerical results agree with our analytical ones, hopefully we can still see if the qualitative behavior is the same. 
+In the previous subsection we saw that the numerical simulation proved to be unstable even in a case that should involve no dynamics. However, up to the time $t=\underline{t}$ it was more or less stable, with some deformations of the initial state that should not be present. Despite the fact that the results yielded by the simulations can not be relied entirely upon, even up to this time, we will attempt to introduce some dynamical terms in the LLG equation and solve this to a time $t=\underline{t}$ and compare this with our analytical results. While the quantitative behavior may be too inaccurate for us to judge if the numerical results agree with our analytical ones, hopefully we can still see if the qualitative behavior is the same. 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{.45\textwidth}
@@ -474,7 +475,7 @@ The first test we do is on a skyrmion with $A=\SI{10}{pJ/m}$, $K=0.17$ MJ/m$^3$,
 \end{figure}
 
 \subsection{The effects of RSOC on the current driven dynamics}
-We now move on to check the effects of RSOC on the dynamics of the skyrmion. It turns out that there is no time in the simulation that is large enough to see these effects that does not break the normalization of the magnetization to a significant degree. These values outside of the range $\left[-1,1\right]$ are local, however, so we still attempt an analysis. Before we start the analysis it should be noted that the results shown and discussed in this section should be taken with a grain of salt, as the code shows clear signs of instability. As this instability also appears at $t=\underline{t}$, and does not increase significantly at $t=2\underline{t}$, we run our simulation up to $t=2\underline{t}$ in this subsection. The dynamical effects of RSOC only appears when we have an applied current in the material. To see its effects it is therefore best to compare the current driven dynamics of a skyrmion in a material with and without RSOC. The strength of DMI is set to be the same in both systems, despite the fact that the presence of RSOC will influence this. For this simulation we use the data for the cobalt nanotracks in Table \ref{tab:PhysicalConstants}, and apply a current in the $x$-direction corresponding to $b_J = 1$ in its dimensionless value. We let the damping constants take on large values $\alpha=\beta=1$ for it to be easier to recognize the effects of RSOC, as it is expected that the RSOC correction is proportional to $\beta$. The simulation results are shown in Figure \ref{fig:SkyrmionRSOC}. The first thing we notice is that there is significant more deformation in the system with RSOC than the one without. This could again be due to the instability of the code, having RSOC present in the LLG equation makes the equations harder to solve. However, RSOC appears as fields in the LLG equation, and for large currents these fields can reach an order of magnitude comparable to the effective field. It is therefore not that unexpected that RSOC causes a deformation of the skyrmion, as the skyrmion magnetization profile is no longer perfectly aligned with the experienced magnetic field. The second thing one notices is that the location of the skyrmion core is not the same in the material with RSOC and the one without. The presence of RSOC shifts the core in the positive $x$- and $y$-direction. This is behavior that is similar to what is predicted by \eqref{eq:ElectricalSkyrmionVComponents} (remember that $R$ is negative for positive $\alpha_R$ and $b_J$). Analytically the core should be located at $\left(-1.17, 0.29\right)$ in the presence of RSOC, while numerically the core is approximately found to be located at $\left(-0.90, 0.35\right)$. The results are not that different, and can possibly be due to the deformation of the skyrmion or the instability of the code. What is most important to note is that the qualitative effects of RSOC on the current driven skyrmion dynamics agree rather well with one another.
+We now move on to check the effects of RSOC on the dynamics of the skyrmion. It turns out that there is no time in the simulation that is large enough to see these effects that does not break the normalization of the magnetization to a significant degree. These values outside of the range $\left[-1,1\right]$ are local, however, so we still attempt an analysis. Before we start the analysis it should be noted that the results shown and discussed in this section should be taken with a grain of salt, as the code shows clear signs of instability. As this instability also appears at $t=\underline{t}$, and does not increase significantly at $t=2\underline{t}$, we run our simulation up to $t=2\underline{t}$ in this subsection. The dynamical effects of RSOC only appears when we have an applied current in the material. To see its effects it is therefore best to compare the current driven dynamics of a skyrmion in a material with and without RSOC. The strength of DMI is set to be the same in both systems, despite the fact that the presence of RSOC will influence this. This is done so that we consider skyrmions of equal size, and the only difference between their dynamics will then be the effects of RSOC. For this simulation we use the data for the cobalt nanotracks in Table \ref{tab:PhysicalConstants}, and apply a current in the $x$-direction corresponding to $b_J = 1$ in its dimensionless value. We let the damping constants take on large values $\alpha=\beta=1$ for it to be easier to recognize the effects of RSOC, as it is expected that the RSOC correction is proportional to $\beta$. The simulation results are shown in Figure \ref{fig:SkyrmionRSOC}. The first thing we notice is that there is significant more deformation in the system with RSOC than the one without. This could again be due to the instability of the code, having RSOC present in the LLG equation makes the equations harder to solve. However, RSOC appears as fields in the LLG equation, and for large currents these fields can reach an order of magnitude comparable to the effective field. It is therefore not that unexpected that RSOC causes a deformation of the skyrmion, as the skyrmion magnetization profile is no longer perfectly aligned with the experienced magnetic field. The second thing one notices is that the location of the skyrmion core is not the same in the material with RSOC and the one without. The presence of RSOC shifts the core in the positive $x$- and $y$-direction. This is behavior that is similar to what is predicted by \eqref{eq:ElectricalSkyrmionVComponents} (remember that $R$ is negative for positive $\alpha_{\text{R}}$ and $b_J$). Analytically the core should be located at $\left(-1.17, 0.29\right)$ in the presence of RSOC, while numerically the core is approximately found to be located at $\left(-0.90, 0.35\right)$. The results are not that different, and can possibly be due to the deformation of the skyrmion or the instability of the code. What is most important to note is that the qualitative effects of RSOC on the current driven skyrmion dynamics agree rather well with one another.
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{.45\textwidth}
@@ -509,7 +510,7 @@ We now move on to check the effects of RSOC on the dynamics of the skyrmion. It 
   \includegraphics[width=\linewidth]{Figures/SkyrmionMzRSOC.jpg}
   \caption{}
 \end{subfigure}
-\caption{$\alpha_R=5.1$ peV$\cdot$m, $b_J=1$, $C=0.75$, $\alpha=\beta=1$. The skyrmion core is located at $\left(-2,0\right)$ without RSOC, and at approximately $\left(-0.90,0.35\right)$ with RSOC. }
+\caption{$\alpha_{\text{R}}=5.1$ peV$\cdot$m, $b_J=1$, $C=0.75$, $\alpha=\beta=1$. The skyrmion core is located at $\left(-2,0\right)$ without RSOC, and at approximately $\left(-0.90,0.35\right)$ with RSOC. }
 \label{fig:SkyrmionRSOC}
 \end{figure}
 
