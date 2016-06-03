@@ -98,7 +98,7 @@ with the fields and torques being given by
 \begin{subequations}
 \begin{align}
     \mathbold{H}^{\text{eff}}_i &= \frac{\omega_0}{\gamma}\left( \mathbold{m}_i \cdot \mathbold{\hat{n}}_k\right)\mathbold{\hat{n}}_k + \frac{\omega_J}{\gamma} \mathbold{m}_{\bar{i}}, \\
-    \mathbold{H}^{\text{R}}_i &= \frac{\omega_R}{\gamma(1+\beta^2)} P^{(\mathbold{\hat{j}}\cdot\mathbold{\hat{r}})}_i \mathbold{\hat{n}}\times\mathbold{\hat{j}}, \\
+    \mathbold{H}^{\text{R}}_i &= \frac{\omega_{\text{R}}}{\gamma(1+\beta^2)} P^{(\mathbold{\hat{j}}\cdot\mathbold{\hat{r}})}_i \mathbold{\hat{n}}\times\mathbold{\hat{j}}, \\
     \mathbold{T}^{\text{STT}}_1 &= -\frac{\omega^{(x)}_j}{\gamma} \mathbold{m}_1\times\left( P_0^{(x)}\mathbold{m}_0 - P_1^{(x)} \mathbold{m}_2\right) \times \mathbold{m}_1, \\
     \mathbold{T}^{\text{STT}}_2 &= -\frac{\omega^{(x)}_j}{\gamma} P_1^{(x)} \mathbold{m}_2\times \mathbold{m}_1 \times \mathbold{m}_2.
 \end{align}
@@ -116,8 +116,8 @@ Starting from the left of \eqref{eq:LLGS_app}, the terms to first order in $u$ t
     \partial_t\mathbold{m}_i &= -i\omega\left( \tilde{u}^x_i\mathbold{\hat{x}} + \tilde{u}^y_i \mathbold{\hat{y}} \right), \label{eq:LLGS_linear_u}\\
     \nonumber -\gamma\mathbold{m}_i\times\mathbold{H}^{\text{eff}}_i &= - \omega_0\lambda_i\left( \tilde{u}^y_i\mathbold{\hat{x}} - \tilde{u}^x_i \mathbold{\hat{y}} \right) \\
     &\hspace{4.5mm }- \omega_J\left[ \left(\lambda_{\bar{i}}\tilde{u}^y_i-\lambda_i\tilde{u}^y_{\bar{i}}\right)\mathbold{\hat{x}} - \left(\lambda_{\bar{i}}\tilde{u}^x_i-\lambda_i\tilde{u}^x_{\bar{i}}\right)\mathbold{\hat{y}} \right], \\
-    -\gamma\mathbold{m}_i\times \mathbold{H}^{\text{R}}_i &= -\frac{\omega_R}{1+\beta^2} P^{(y)}_i \left( \tilde{u}^y_i\mathbold{\hat{x}} - \tilde{u}^x_i \mathbold{\hat{y}} \right), \label{eq:LLGS_cross_u} \\
-    \gamma\beta\mathbold{m}_i\times\mathbold{m}_i\times\mathbold{H}^{\text{R}}_i &= \frac{\beta\omega_R}{1+\beta^2} P^{(y)}_i \lambda_i\ \left( \tilde{u}^x_i\mathbold{\hat{x}} + \tilde{u}^y_i\mathbold{\hat{y}} \right), \\
+    -\gamma\mathbold{m}_i\times \mathbold{H}^{\text{R}}_i &= -\frac{\omega_{\text{R}}}{1+\beta^2} P^{(y)}_i \left( \tilde{u}^y_i\mathbold{\hat{x}} - \tilde{u}^x_i \mathbold{\hat{y}} \right), \label{eq:LLGS_cross_u} \\
+    \gamma\beta\mathbold{m}_i\times\mathbold{m}_i\times\mathbold{H}^{\text{R}}_i &= \frac{\beta\omega_{\text{R}}}{1+\beta^2} P^{(y)}_i \lambda_i\ \left( \tilde{u}^x_i\mathbold{\hat{x}} + \tilde{u}^y_i\mathbold{\hat{y}} \right), \\
     \alpha\mathbold{m}_i\times\partial_t\mathbold{m}_i &= i\alpha \omega \lambda_i \left( \tilde{u}^y_i\mathbold{\hat{x}} - \tilde{u}^x_i \mathbold{\hat{y}} \right), \\
     \nonumber \mathbold{T}^{\text{STT}}_1 &= \omega^{(x)}_j \lambda_1 P^{(x)}_0 \left( \tilde{u}^x_1\mathbold{\hat{x}} + \tilde{u}^y_1 \mathbold{\hat{y}} \right) \\
     &\hspace{4.5mm} +\omega^{(x)}_jP^{(x)}_1\left[\left(-\lambda_1\lambda_2\tilde{u}^x_1+ \tilde{u}^x_{2}\right)\mathbold{\hat{x}} + \left(-\lambda_1\lambda_2\tilde{u}^y_1+ \tilde{u}^y_{2}\right)\mathbold{\hat{y}}\right], \\
@@ -142,10 +142,10 @@ We want to express the equations above as a linear combination of $\tilde{\mathb
 Using this, we find that the LLGS equations can be written as
 \begin{subequations}
 \begin{align}
-    \nonumber&\left[-(i+\alpha\lambda_1)\omega - i\omega_0\lambda_1 - i\omega_J\lambda_2 -\frac{\omega_R}{1+\beta^2}P^{(y)}_1(i+\beta\lambda_1) + \omega^{(x)}_j\lambda_1(\lambda_2P^{(x)}_1 - P^{(x)}_0)\right]\tilde{\mathbold{u}}_1 \\
+    \nonumber&\left[-(i+\alpha\lambda_1)\omega - i\omega_0\lambda_1 - i\omega_J\lambda_2 -\frac{\omega_{\text{R}}}{1+\beta^2}P^{(y)}_1(i+\beta\lambda_1) + \omega^{(x)}_j\lambda_1(\lambda_2P^{(x)}_1 - P^{(x)}_0)\right]\tilde{\mathbold{u}}_1 \\
     + &\left[ i\omega_J\lambda_1 - \omega^{(x)}_jP^{(x)}_1 \right]\tilde{\mathbold{u}}_2 = 0, \\
     \nonumber&\left[i\omega_J\lambda_2 + \omega^{(x)}_jP^{(x)}_1\right]\tilde{\mathbold{u}}_1 \\
-    + &\left[-(i+\alpha\lambda_2)\omega - i\omega_0\lambda_2 - i\omega_J\lambda_1 -\frac{\omega_R}{1+\beta^2}P^{(y)}_1(i+\beta\lambda_2) - \omega^{(x)}_j\lambda_1\lambda_2P^{(x)}_1 \right]\tilde{\mathbold{u}}_2 = 0.
+    + &\left[-(i+\alpha\lambda_2)\omega - i\omega_0\lambda_2 - i\omega_J\lambda_1 -\frac{\omega_{\text{R}}}{1+\beta^2}P^{(y)}_1(i+\beta\lambda_2) - \omega^{(x)}_j\lambda_1\lambda_2P^{(x)}_1 \right]\tilde{\mathbold{u}}_2 = 0.
 \end{align}
 \end{subequations}
 Multiplying the equations above with $i$, we can write the equations compactly as
@@ -185,7 +185,7 @@ with
      \lambda_1\lambda_2 & -1 \\
      1 & -\lambda_1\lambda_2
     \end{pmatrix}\right] \\
-    &\hspace{4.5mm} \frac{\omega_R^{(y)}}{1+\beta^2}\left[
+    &\hspace{4.5mm} \frac{\omega_{\text{R}}^{(y)}}{1+\beta^2}\left[
     \begin{pmatrix}
      P_1^{(y)} & 0 \\
      0 & P_2^{(y)}
@@ -226,7 +226,7 @@ When considering the thin film geometry, there are four differences from the bul
      \lambda_1\lambda_2 & -1 \\
      1 & -\lambda_1\lambda_2
     \end{pmatrix}\right] \\
-    &\hspace{4.5mm} \frac{\omega_R^{(y)}}{1+\beta^2}\left[
+    &\hspace{4.5mm} \frac{\omega_{\text{R}}^{(y)}}{1+\beta^2}\left[
     \begin{pmatrix}
      -P_0^{(x)} & 0 \\
      0 & P_1^{(x)}
